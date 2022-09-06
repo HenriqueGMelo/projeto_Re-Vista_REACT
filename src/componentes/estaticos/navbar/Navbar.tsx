@@ -9,14 +9,14 @@ function Navbar() {
     return (
         <>
             <AppBar position="static">
-                <Toolbar variant="dense">
-                    <Box className='cursor' >
+                <Toolbar className='flex fundo3' variant="dense">
+                    <Box className='cursor fundo3' >
                         <Typography variant="h5" color="inherit">
                             Revista
                         </Typography>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box display="flex" justifyContent="start" style={{color:"black"}}>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Home
