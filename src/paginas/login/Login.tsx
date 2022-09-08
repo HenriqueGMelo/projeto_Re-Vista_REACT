@@ -3,6 +3,21 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
+
+// Crie seu próprio tema:
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: "#3c7000",
+      main: "#3c7000",
+      dark: "#3c7000",
+      contrastText: "#3c7000",
+    },
+  },
+});
+
 
 function Login () {
     return (
@@ -25,6 +40,8 @@ function Login () {
               >
                 Entrar
               </Typography>
+              
+              <MuiThemeProvider theme={theme}>
               <TextField
                 id="usuario"
                 label="usuario"
@@ -42,6 +59,7 @@ function Login () {
                 type="password"
                 fullWidth
               ></TextField>
+              </MuiThemeProvider>
               <Box marginTop={2} textAlign="center">
                 <Link to="/home" className="text-decoration">
                   <Button type="submit" variant="contained" className="btn">
