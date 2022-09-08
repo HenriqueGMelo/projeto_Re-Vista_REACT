@@ -3,16 +3,46 @@ import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { Box } from '@mui/material';
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
+
+// Crie seu próprio tema:
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: "#50BD16",
+      main: "#50BD16",
+      dark: "#50BD16",
+      contrastText: "#50BD16",
+    },
+    secondary: {
+      light: "#ff7961",
+      main: "#f44336",
+      dark: "#ba000d",
+      contrastText: "#000",
+    },
+  },
+});
+
 
 function CadastroUsuario(){
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={ 6 } className='imagem2'></Grid>
-            <Grid item xs={ 6 } alignItems='center'>
-                <Box paddingX={ 20 }>
+
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='fundo4'>
+            <Grid item xs={5} alignItems='center'>
+                <Box >
                     <form>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
-                        <TextField id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth></TextField>
+                        <Typography variant='h3' gutterBottom color='secondary' component='h3' align='center' className='textos2'>Cadastre-se e nos ajude a vestir o mundo com solidariedade!</Typography>
+                        <MuiThemeProvider theme={theme}>
+                            <TextField
+                            id="nome"
+                            label="nome"
+                            variant="outlined"
+                            name="nome"
+                            margin="normal"
+                            fullWidth
+                            ></TextField>
+                        </MuiThemeProvider>
                         <TextField id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth></TextField>
                         <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
                         <TextField id='confirmarSenha' label='confirmarSenha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
@@ -20,18 +50,17 @@ function CadastroUsuario(){
 
                         <Box marginTop = { 2 } textAlign='center'>
                             <Link to='/login' className='text-decorator-none' >
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
+                                <Button variant='contained' className='btnCancelar'>
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button type='submit' variant='contained' className='btn2'>
                                 Cadastrar
                             </Button>
                         </Box>
                     </form>
                 </Box>
             </Grid>
-
         </Grid>
     );
 }

@@ -13,7 +13,7 @@ function Navbar() {
       <AppBar position="fixed">
         <Toolbar className="flex fundo3" variant="dense">
           <Box>
-            <img src={logoum} alt="logo"/> 
+            <img src={logoum} className='center' alt="logo" /> 
           </Box>
 
           <Box display="flex" justifyContent="start" className="cortext">
