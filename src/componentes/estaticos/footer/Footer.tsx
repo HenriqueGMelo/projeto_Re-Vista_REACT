@@ -28,7 +28,7 @@ function Footer (){
                   variant="h5"
                   align="center"
                   gutterBottom
-                  className="textos"
+                  className="fontcolor"
                 >
                   Siga-nos nas redes sociais{" "}
                 </Typography>

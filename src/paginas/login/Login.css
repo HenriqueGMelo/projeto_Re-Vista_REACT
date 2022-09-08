@@ -11,17 +11,23 @@ background-position: center;}
 }
 
 .btn{
-  background-color: #89c445 !important; 
+  background-color: #3c7000 !important; 
   text-decoration: none !important;
   color: rgb(255, 255, 255) !important;
 }
 
-.texto1{
-    color: #89c445;
+.text-decoration{
+    text-decoration: none;
+}
 
+
+.texto1{
+    color:#3c7000;
+    
 }
 
 .cadastro{
     color: #3c7000;
-    text-decoration: none!;
+    text-decoration: none;
+    font-weight: bold !important;
 }
