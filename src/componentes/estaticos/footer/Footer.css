@@ -1,14 +1,14 @@
 .box1{
-    background-color: #50BD16;
+    background-color: #ffffff;
 }
 
 .redes{
-    color:rgb(255, 255, 255);
+    color:rgb(0, 0, 0);
     font-size: 40px !important;
 }
 
 .fontcolor{
-    color: black;
+    color: rgb(0, 0, 0);
     font-weight: bold;
     
 }
