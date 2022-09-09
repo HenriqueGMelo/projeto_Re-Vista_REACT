@@ -1,8 +1,12 @@
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import useLocalStorage from "react-use-localstorage";
+import UserLogin from "../../models/UserLogin";
+import { login } from "../../services/Service"
+
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
 
@@ -20,7 +24,46 @@ const theme = createTheme({
 
 
 function Login () {
-    return (
+    
+  let history = useNavigate();
+
+    const [ token, setToken ] = useLocalStorage('token');
+
+    const [userLogin, setUserLogin] = useState<UserLogin>({
+        id: 0,
+        email: '',
+        senha: '',
+        token: ''
+    })
+
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    useEffect(() => {
+        if(token != ''){
+            history("/home")
+        }
+    }, [token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        try{
+            await login(`/usuarios/logar`, userLogin, setToken)
+
+            alert("Usuário logado com sucesso!")
+        }
+        catch(error)
+        {
+            alert("Dados dos usuário inconsistentes. Erro ao logar!")
+        }
+    }
+  
+  return (
       <Grid
         container
         direction="row"
@@ -30,7 +73,7 @@ function Login () {
       >
         <Grid alignItems="center" xs={6}>
           <Box paddingX={20}>
-            <form>
+            <form onSubmit={onSubmit}>
               <Typography
                 variant="h3"
                 gutterBottom
@@ -42,30 +85,30 @@ function Login () {
               </Typography>
 
               <MuiThemeProvider theme={theme}>
-              <TextField
-                id="usuario"
-                label="usuario"
+              <TextField value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="email"
+                label="email"
                 variant="outlined"
-                name="usuario"
+                name="E-mail"
                 margin="normal"
                 fullWidth
               ></TextField>
-              <TextField
+              <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 id="senha"
                 label="senha"
                 variant="outlined"
-                name="senha"
+                name="Senha"
                 margin="normal"
                 type="password"
                 fullWidth
               ></TextField>
               </MuiThemeProvider>
               <Box marginTop={2} textAlign="center">
-                <Link to="/home" className="text-decoration">
+                
                   <Button type="submit" variant="contained" className="btn">
                     Logar
                   </Button>
-                </Link>
+                
               </Box>
             </form>
             <Box display="flex" justifyContent="center" marginTop={2}>
