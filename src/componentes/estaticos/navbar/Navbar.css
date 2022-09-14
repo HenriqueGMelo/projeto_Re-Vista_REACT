@@ -1,36 +1,37 @@
-.opa{
+.opa {
     opacity: 80%;
-    
+    margin-bottom: 20px;
+
 }
 
 .fundo3 {
-    background-color:#ffffff;
+    background-color: #ffffff;
     flex-direction: row;
-    justify-content: space-between;   
+    justify-content: space-between;
     opacity: 100%;
     color: black;
 }
 
-.caixa{
- display: flex;
-flex-direction: row;
+.caixa {
+    display: flex;
+    flex-direction: row;
 }
 
-.caixa1{
+.caixa1 {
     flex-direction: row;
     display: flex;
     justify-content: center;
-    
+
 }
 
-.caixa2{
-    display:flex;
-   justify-content: center;
-   align-items: center;
-   
+.caixa2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.center{
+.center {
     display: flex !important;
 }
 
@@ -40,5 +41,15 @@ flex-direction: row;
 
 .cursor {
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: #36607a;
+    font-weight: bold !important;
+}
+
+.cursor:hover {
+    color: #df604f;
+    font-weight: 900;
+}
+
+a:active {
+    color: #df604f;
 }
