@@ -3,3 +3,35 @@
     width: 100vw;
     height: 100vh;
 }
+
+.carousel1 {
+    width: 100vw;
+    height: 60vh;
+    background-image: url(https://www.castecnologia.com.br/wp-content/uploads/2020/03/fundo-recuperacao-perdas-comerciais-energia.png);
+    margin-top: 60px;
+    
+}
+
+.h1 {
+    padding-top: 5vh;
+    text-align: center;
+    font-size: 5vh;
+}
+
+.fazemos {
+    display: flex;
+    flex-direction: column ;
+}
+
+.fazemosbox {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    height: 70vh;
+}
+
+.fazemosbox p {
+    width: 40%;
+    font-size: 25px;
+}
