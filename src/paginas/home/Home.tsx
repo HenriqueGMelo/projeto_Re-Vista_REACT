@@ -7,7 +7,7 @@ import './Home.css';
 function Home() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" >
+            <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid className='carousel1'>
                 </Grid>
                 <Grid xs={11}>
