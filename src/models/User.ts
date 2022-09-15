@@ -4,6 +4,7 @@ interface User{
     email: string;
     senha: string;
     tipo: string;
+    condicao: string;
     documento: string;
     endereco: string
 }

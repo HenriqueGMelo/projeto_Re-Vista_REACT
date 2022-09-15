@@ -31,6 +31,7 @@ function CadastroUsuario() {
             email: "",
             senha: "",
             tipo: "",
+            condicao: "",
             documento: "",
             endereco: ""
         }
@@ -43,6 +44,7 @@ function CadastroUsuario() {
             email: "",
             senha: "",
             tipo: "",
+            condicao: "",
             documento: "",
             endereco: ""
         }
@@ -102,8 +104,9 @@ function CadastroUsuario() {
                     <form onSubmit={onSubmit}>
                         <MuiThemeProvider theme={theme}>
                             <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo' variant='outlined' name='tipo' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.condicao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='condicao' label='Condição' variant='outlined' name='condicao' margin='normal' className="background" fullWidth></TextField>
                             <TextField value={user.documento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="documento" label="CPF/CNPJ" variant="outlined" name="documento" className="background" margin="normal" fullWidth></TextField>
-                            <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereço' label='Endereço' variant='outlined' name='endereço' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='Endereço' variant='outlined' name='endereco' margin='normal' className="background" fullWidth></TextField>
                         </MuiThemeProvider>
                     </form>
                 </Box>
