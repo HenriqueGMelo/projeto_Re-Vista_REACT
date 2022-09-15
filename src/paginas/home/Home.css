@@ -1,24 +1,71 @@
-.fundo {
-    background-color: #F5FEF2;
-    width: 100vw;
-    height: 100vh;
+
+.slider {
+    overflow: hidden;
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
 }
 
-.carousel1 {
-    width: 100vw;
-    height: 60vh;
-    background-image: url(https://www.castecnologia.com.br/wp-content/uploads/2020/03/fundo-recuperacao-perdas-comerciais-energia.png);
-    margin-top: 60px;
-    
+.slider label {
+    position: relative;
+    top: -50px;
+    z-index: 1;
 }
+
+.slider img {
+    width: 100vw;
+    height: 70vh;
+    animation: fade-in normal 1s linear;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.slider1, .slider2 {
+    overflow: hidden;
+    margin: 0px;
+
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider1 label, .slider2 label {
+    position: relative;
+    top: -50px;
+    z-index: 1;
+}
+
+.slider1 img, .slider2 img {
+    width: 100vw;
+    height: 90vh;
+    animation: fade-in normal 1s linear;
+}
+
+
+
+/* Fim carrossel */
 
 .h1 {
-    padding-top: 5vh;
+    color: #36607a;
+    background-color: white;
+    padding: 5vh;
     text-align: center;
-    font-size: 5vh;
 }
 
 .fazemos {
+    background-color: white;
     display: flex;
     flex-direction: column ;
 }
@@ -28,10 +75,75 @@
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    height: 70vh;
+    height: 50vh;
 }
 
 .fazemosbox p {
     width: 40%;
-    font-size: 25px;
+    font-size: 20px;
+}
+
+/* Cards */
+.gridcards {
+    margin-top: 8vh;
+    display: flex;
+    justify-content: space-around;    
+    
+}
+
+.cards {
+    max-width: 25vw;
+    max-height: 40vh;
+   
+}
+
+/* Botóes doadores e ONGs */
+
+.box-btn {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.bt-doador {
+    background-color: #36607a !important;
+    width: 30vw !important;
+    height: 6vh !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color: white !important;
+}
+
+.bt-ong {
+    background-color: #df604f !important;
+    width: 30vw !important;
+    height: 6vh !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color: white !important;
+}
+
+.bt-doador:hover {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+.bt-ong:hover {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+/* Carrosseis inferiores */
+
+.h1car {
+    padding: 7vh;
+    color: #36607a;
+    text-align: center;
+    background-color: white;
+}
+
+.h1car2 {
+    padding: 7vh;
+    color: #df604f;
+    text-align: center;
+    background-color: white;
 }
