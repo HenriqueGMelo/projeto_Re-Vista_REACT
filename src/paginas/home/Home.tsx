@@ -204,12 +204,12 @@ function Home() {
                         <Button className='bt-doador'>Quero ser um doador</Button>
                         <Button className='bt-ong'>Quero receber doações</Button>
                     </Box>
-                    
+
                 </Grid>
                 <Grid xs={6}>
                     <Typography className='h1car' variant='h2'>Para doadores parceiros</Typography>
                 </Grid>
-                
+
                 <Grid className='carrossel1'>
                     <section className='slider1 carousel1'>
                         <label htmlFor={radioState1}>

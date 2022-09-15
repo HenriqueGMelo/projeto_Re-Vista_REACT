@@ -53,7 +53,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken)
+      await login(`/api/Usuarios/logar`, userLogin, setToken)
 
       alert("Usuário logado com sucesso!")
     }
@@ -63,15 +63,18 @@ function Login() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center" className="fundo4">
+    <Grid container direction="row" justifyContent="center" alignItems="center"  >
+        <Grid xs={6} className="imagem">
+
+        </Grid>
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={onSubmit}>
             <Typography variant="h3" gutterBottom component="h3" align="center" className="texto1"> Entrar</Typography>
 
             <MuiThemeProvider theme={theme}>
-              <TextField value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="email" label="email" variant="outlined" name="E-mail" margin="normal" fullWidth></TextField>
-              <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="senha" variant="outlined" name="Senha" margin="normal" type="password" fullWidth></TextField>
+              <TextField className="fundo4" value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="email" label="E-mail" variant="outlined" name="email" margin="normal" fullWidth></TextField>
+              <TextField className="fundo4" value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="Senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth></TextField>
             </MuiThemeProvider>
 
             <Box marginTop={2} textAlign="center">
@@ -90,9 +93,7 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem">
-
-      </Grid>
+      
     </Grid>
   );
 }
