@@ -56,13 +56,6 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/contato" className="text-decorator-none">
-              <Box marginX={3}>
-                <Typography variant="h6" className="cursor">
-                  Contato
-                </Typography>
-              </Box>
-            </Link>
           </Grid>
         </Toolbar>
       </AppBar>
