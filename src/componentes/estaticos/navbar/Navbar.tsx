@@ -5,8 +5,11 @@ import Grid from "@mui/material/Grid";
 import { Link } from "react-router-dom";
 import logo3 from "./logo3.png";
 import "./Navbar.css";
+import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
+  const [token, setToken] = useLocalStorage('token');
+
   return (
     <>
       <AppBar position="fixed" className="opa">
@@ -41,22 +44,36 @@ function Navbar() {
             </Box>
           </Grid>
 
-          <Grid item xs={6} className="caixa1">
-            <Link to="/cadastrousuario" className="text-decorator-none">
-              <Box marginX={3}>
-                <Typography variant="h6" className="cursor">
-                  Cadastre-se
-                </Typography>
-              </Box>
-            </Link>
-            <Link to="/login" className="text-decorator-none">
-              <Box marginX={3}>
-                <Typography variant="h6" className="cursor">
-                  Login
-                </Typography>
-              </Box>
-            </Link>
-          </Grid>
+          {
+            token === ''
+              ?
+              <Grid item xs={6} className="caixa1">
+                <Link to="/cadastrousuario" className="text-decorator-none">
+                  <Box marginX={3}>
+                    <Typography variant="h6" className="cursor">
+                      Cadastre-se
+                    </Typography>
+                  </Box>
+                </Link>
+                <Link to="/login" className="text-decorator-none">
+                  <Box marginX={3}>
+                    <Typography variant="h6" className="cursor">
+                      Login
+                    </Typography>
+                  </Box>
+                </Link>
+              </Grid>
+              :
+              <Grid item xs={6} className="caixa1">
+                <Link to="/logout" className="text-decorator-none">
+                  <Box marginX={3}>
+                    <Typography variant="h6" className="cursor">
+                      Logout
+                    </Typography>
+                  </Box>
+                </Link>
+              </Grid>
+          }
         </Toolbar>
       </AppBar>
     </>
