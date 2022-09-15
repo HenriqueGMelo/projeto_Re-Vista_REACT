@@ -7,11 +7,11 @@ background-size: cover;
 background-position: center;}
 
 .fundo4{
-    background-color: #F5FEF2;
+    background-color: white;
 }
 
 .btn{
-  background-color: #50BD16 !important; 
+  background-color: #ff604d !important; 
   text-decoration: none !important;
   color: rgb(255, 255, 255) !important;
 }
@@ -21,12 +21,12 @@ background-position: center;}
 }
 
 .texto1{
-    color:#3c7000;
+    color:#ff604d;
     
 }
 
 .cadastro{
-    color: #3c7000;
+    color: #00607b;
     text-decoration: none;
     font-weight: bold !important;
 }

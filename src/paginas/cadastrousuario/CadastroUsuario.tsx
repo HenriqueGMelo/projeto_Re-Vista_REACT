@@ -12,14 +12,13 @@ import { createTheme } from "@material-ui/core/styles";
 const theme = createTheme({
     palette: {
         primary: {
-            light: "#3c7000",
-            main: "#3c7000",
-            dark: "#3c7000",
-            contrastText: "#3c7000",
+            light: "#36607a",
+            main: "#36607a",
+            dark: "#36607a",
+            contrastText: "#36607a",
         },
     },
 });
-
 
 function CadastroUsuario() {
 
@@ -31,7 +30,9 @@ function CadastroUsuario() {
             nome: "",
             email: "",
             senha: "",
-            tipo: ""
+            tipo: "",
+            documento: "",
+            endereco: ""
         }
     )
 
@@ -41,7 +42,9 @@ function CadastroUsuario() {
             nome: "",
             email: "",
             senha: "",
-            tipo: ""
+            tipo: "",
+            documento: "",
+            endereco: ""
         }
     )
 
@@ -76,48 +79,48 @@ function CadastroUsuario() {
     return (
 
         <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={12} alignItems='center'>
-                <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='textos2'>Cadastre-se e nos ajude a vestir o mundo com solidariedade!</Typography>
+            <Grid item xs={10} alignItems='center'>
+                <Box paddingX={20} marginTop={20}>
+                    <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='textotitulo'>Cadastro</Typography>
+                    <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='subtexto'>Cadastre-se e nos ajude a vestir o mundo com solidariedade!</Typography>
+                </Box>
             </Grid>
-            <Grid item xs={6} alignItems='center'>
-                <Box >
+            <Grid item xs={5} alignItems='center'>
+                <Box paddingX={15} marginTop={10}>
                     <form onSubmit={onSubmit}>
                         <MuiThemeProvider theme={theme}>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth></TextField>
-                            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth></TextField>
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
-                            <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='tipo' variant='outlined' name='tipo' margin='normal' fullWidth></TextField>
+                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" className="background" fullWidth></TextField>
+                            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='E-mail' variant='outlined' name='email' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
+                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
                         </MuiThemeProvider>
                     </form>
                 </Box>
             </Grid>
-            <Grid item xs={6} alignItems='center'>
-                <Box >
+            <Grid item xs={5} alignItems='center'>
+                <Box paddingX={15} marginTop={10}>
                     <form onSubmit={onSubmit}>
                         <MuiThemeProvider theme={theme}>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth></TextField>
-                            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth></TextField>
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='confirmarSenha' variant='outlined' name='senha' margin='normal' type='password' fullWidth></TextField>
-                            <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='tipo' variant='outlined' name='tipo' margin='normal' fullWidth></TextField>
+                            <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo' variant='outlined' name='tipo' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.documento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="documento" label="CPF/CNPJ" variant="outlined" name="documento" className="background" margin="normal" fullWidth></TextField>
+                            <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereço' label='Endereço' variant='outlined' name='endereço' margin='normal' className="background" fullWidth></TextField>
                         </MuiThemeProvider>
                     </form>
                 </Box>
             </Grid>
             <Grid item xs={12} alignItems='center'>
-                <Box marginTop={2} textAlign='center'>
+                <Box marginTop={10} textAlign='center'>
                     <Link to='/login' className='text-decorator-none' >
-                        <Button variant='contained' className='btnCancelar'>
+                        <Button variant='contained' className='btncancelar'>
                             Cancelar
                         </Button>
                     </Link>
-                    <Button type='submit' variant='contained' className='btn2'>
+                    <Button type='submit' variant='contained' className='btncadastro'>
                         Cadastrar
                     </Button>
                 </Box>
             </Grid>
-        </Grid>
+        </Grid >
     );
 }
 
