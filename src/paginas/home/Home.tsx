@@ -6,7 +6,7 @@ import './Home.css';
 
 function Home() {
 
-    const [radioState, setRadioState] = useState('Banana');
+    const [radioState, setRadioState] = useState('Agasalho');
     const [count, setCount] = useState(0);
 
     const imagesOpt = [
@@ -78,7 +78,7 @@ function Home() {
             }
             setRadioState2(imagesOpt2[count2].value);
             setCount2(count2 + 1);
-        }, 7000);
+        }, 5000);
     }, [count2, imagesOpt2]);
 
     return (
