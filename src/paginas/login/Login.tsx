@@ -53,7 +53,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await login(`/usuarios/logar`, userLogin, setToken)
+      await login(`/api/Usuarios/logar`, userLogin, setToken)
 
       alert("Usuário logado com sucesso!")
     }

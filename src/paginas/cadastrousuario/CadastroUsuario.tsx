@@ -69,8 +69,8 @@ function CadastroUsuario() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha == user.senha) {
-            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+        if (confirmarSenha === user.senha) {
+            cadastroUsuario(`/api/Usuarios/cadastrar`, user, setUserResult)
             alert('Usuário cadastrado com sucesso!')
         }
         else {
@@ -79,51 +79,52 @@ function CadastroUsuario() {
     }
 
     return (
-
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid item xs={10} alignItems='center'>
-                <Box paddingX={20} marginTop={20}>
-                    <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='textotitulo'>Cadastro</Typography>
-                    <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='subtexto'>Cadastre-se e nos ajude a vestir o mundo com solidariedade!</Typography>
-                </Box>
-            </Grid>
-            <Grid item xs={5} alignItems='center'>
-                <Box paddingX={15} marginTop={10}>
-                    <form onSubmit={onSubmit}>
-                        <MuiThemeProvider theme={theme}>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" className="background" fullWidth></TextField>
-                            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='E-mail' variant='outlined' name='email' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
-                        </MuiThemeProvider>
-                    </form>
-                </Box>
-            </Grid>
-            <Grid item xs={5} alignItems='center'>
-                <Box paddingX={15} marginTop={10}>
-                    <form onSubmit={onSubmit}>
-                        <MuiThemeProvider theme={theme}>
-                            <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo' variant='outlined' name='tipo' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.condicao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='condicao' label='Condição' variant='outlined' name='condicao' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.documento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="documento" label="CPF/CNPJ" variant="outlined" name="documento" className="background" margin="normal" fullWidth></TextField>
-                            <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='Endereço' variant='outlined' name='endereco' margin='normal' className="background" fullWidth></TextField>
-                        </MuiThemeProvider>
-                    </form>
-                </Box>
-            </Grid>
-            <Grid item xs={12} alignItems='center'>
-                <Box marginTop={10} textAlign='center'>
-                    <Link to='/login' className='text-decorator-none' >
-                        <Button variant='contained' className='btncancelar'>
-                            Cancelar
+        <form onSubmit={onSubmit}>
+            <Grid container direction='row' justifyContent='center' alignItems='center'>
+                <Grid item xs={10} alignItems='center'>
+                    <Box paddingX={20} marginTop={20}>
+                        <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='textotitulo'>Cadastro</Typography>
+                        <Typography variant='h3' gutterBottom color='primary' component='h3' align='center' className='subtexto'>Cadastre-se e nos ajude a vestir o mundo com solidariedade!</Typography>
+                    </Box>
+                </Grid>
+                <Grid item xs={5} alignItems='center'>
+                    <Box paddingX={15} marginTop={10}>
+                        <div>
+                            <MuiThemeProvider theme={theme}>
+                                <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" className="background" fullWidth></TextField>
+                                <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='E-mail' variant='outlined' name='email' margin='normal' className="background" fullWidth></TextField>
+                                <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
+                                <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='senha' margin='normal' className="background" type='password' fullWidth></TextField>
+                            </MuiThemeProvider>
+                        </div>
+                    </Box>
+                </Grid>
+                <Grid item xs={5} alignItems='center'>
+                    <Box paddingX={15} marginTop={10}>
+                        <div >
+                            <MuiThemeProvider theme={theme}>
+                                <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo' variant='outlined' name='tipo' margin='normal' className="background" fullWidth></TextField>
+                                <TextField value={user.condicao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='condicao' label='Condição' variant='outlined' name='condicao' margin='normal' className="background" fullWidth></TextField>
+                                <TextField value={user.documento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="documento" label="CPF/CNPJ" variant="outlined" name="documento" className="background" margin="normal" fullWidth></TextField>
+                                <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='Endereço' variant='outlined' name='endereco' margin='normal' className="background" fullWidth></TextField>
+                            </MuiThemeProvider>
+                        </div>
+                    </Box>
+                </Grid>
+                <Grid item xs={12} alignItems='center'>
+                    <Box marginTop={10} textAlign='center'>
+                        <Link to='/login' className='text-decorator-none' >
+                            <Button variant='contained' className='btncancelar'>
+                                Cancelar
+                            </Button>
+                        </Link>
+                        <Button type='submit' variant='contained' className='btncadastro'>
+                            Cadastrar
                         </Button>
-                    </Link>
-                    <Button type='submit' variant='contained' className='btncadastro'>
-                        Cadastrar
-                    </Button>
-                </Box>
-            </Grid>
-        </Grid >
+                    </Box>
+                </Grid>
+            </Grid >
+        </form>
     );
 }
 
