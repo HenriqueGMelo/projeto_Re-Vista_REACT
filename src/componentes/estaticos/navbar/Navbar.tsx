@@ -2,13 +2,20 @@ import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo3 from "./logo3.png";
 import "./Navbar.css";
 import useLocalStorage from "react-use-localstorage";
 
 function Navbar() {
   const [token, setToken] = useLocalStorage('token');
+  let navigate = useNavigate();
+
+  function goLogout() {
+    setToken('')
+    alert("Usuário deslogado!")
+    navigate('/home')
+}
 
   return (
     <>
@@ -39,9 +46,11 @@ function Navbar() {
           </Grid>
 
           <Grid item xs={1}>
+            <Link to="/home" className="text-decorator-none">
             <Box className="caixa2">
               <img src={logo3} className="center" alt="logo" />
             </Box>
+            </Link>
           </Grid>
 
           {
@@ -65,13 +74,20 @@ function Navbar() {
               </Grid>
               :
               <Grid item xs={6} className="caixa1">
-                <Link to="/logout" className="text-decorator-none">
+                <Link to="/minhaconta" className="text-decorator-none">
                   <Box marginX={3}>
                     <Typography variant="h6" className="cursor">
-                      Logout
+                      Minha Conta
                     </Typography>
                   </Box>
                 </Link>
+                
+                  <Box marginX={3}>
+                    <Typography variant="h6" className="cursor" onClick={goLogout}>
+                      Logout
+                    </Typography>
+                  </Box>
+                
               </Grid>
           }
         </Toolbar>
