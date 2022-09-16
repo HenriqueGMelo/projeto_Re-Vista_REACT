@@ -1,10 +1,13 @@
+import User from "./User";
+
 interface Doacao{
     id: number;
-    Titulo: string; 
-    Descricao: string;
-    QtdProduto: string;
-    QtdLimite: string;
-    URL_Imagem: string
+    titulo: string; 
+    descricao: string;
+    qtdProduto: string;
+    qtdLimite: string;
+    urL_Imagem: string;
+    criador: User
 }
 
 export default Doacao;
