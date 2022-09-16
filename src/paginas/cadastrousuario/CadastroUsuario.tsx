@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
-import { Grid, Typography, Button, TextField } from '@material-ui/core';
+import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { Box } from '@mui/material';
@@ -7,6 +7,7 @@ import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
+
 
 // Crie seu próprio tema:
 const theme = createTheme({
@@ -32,7 +33,7 @@ function CadastroUsuario() {
             senha: "",
             endereco: "",
             documento: "",
-            tipo: "",
+            tipo: "NORMAL",
             condicao: ""
         }
     )
@@ -103,8 +104,24 @@ function CadastroUsuario() {
                     <Box paddingX={15} marginTop={10}>
                         <div >
                             <MuiThemeProvider theme={theme}>
-                                <TextField value={user.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipo' label='Tipo' variant='outlined' name='tipo' margin='normal' className="background" fullWidth></TextField>
-                                <TextField value={user.condicao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='condicao' label='Condição' variant='outlined' name='condicao' margin='normal' className="background" fullWidth></TextField>
+                                <FormControl
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                                    variant="outlined" className="background" margin="normal" fullWidth>
+                                    <InputLabel htmlFor="outlined-age-native-simple">Condição</InputLabel>
+                                    <Select
+                                        value={user.condicao}
+                                        native
+                                        label="condicao"
+                                        inputProps={{
+                                            name: 'condicao',
+                                            id: 'outlined-age-native-simple',
+                                        }}
+                                    >
+                                        <option aria-label="None" value="" />
+                                        <option value="ONG">ONG</option>
+                                        <option value="DOADOR">DOADOR</option>
+                                    </Select>
+                                </FormControl>
                                 <TextField value={user.documento} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="documento" label="CPF/CNPJ" variant="outlined" name="documento" className="background" margin="normal" fullWidth></TextField>
                                 <TextField value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='endereco' label='Endereço' variant='outlined' name='endereco' margin='normal' className="background" fullWidth></TextField>
                             </MuiThemeProvider>
