@@ -3,10 +3,10 @@ interface User{
     nome: string;
     email: string;
     senha: string;
+    endereco: string
+    documento: string;
     tipo: string;
     condicao: string;
-    documento: string;
-    endereco: string
 }
 
 export default User;

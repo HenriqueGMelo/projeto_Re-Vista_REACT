@@ -7,6 +7,7 @@ import { doacao } from "../../services/Service";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
 import './CadastroDoacao.css';
+import User from "../../models/User";
 
 // Crie seu próprio tema:
 const theme = createTheme({
@@ -26,22 +27,24 @@ function CadastroDoacao() {
     const [user, setUser] = useState<Doacao>(
         {
             id: 0,
-            Titulo: "",
-            Descricao: "",
-            QtdProduto: "",
-            QtdLimite: "",
-            URL_Imagem: ""
+            titulo: "",
+            descricao: "",
+            qtdProduto: "",
+            qtdLimite: "",
+            urL_Imagem: "",
+            criador: User
         }
     )
 
     const [userResult, setUserResult] = useState<Doacao>(
         {
             id: 0,
-            Titulo: "",
-            Descricao: "",
-            QtdProduto: "",
-            QtdLimite: "",
-            URL_Imagem: ""
+            titulo: "",
+            descricao: "",
+            qtdProduto: "",
+            qtdLimite: "",
+            urL_Imagem: "",
+            criador: User
         }
     )
 
@@ -60,7 +63,7 @@ function CadastroDoacao() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (user.Titulo == user.Titulo) {
+        if (user.titulo == user.titulo) {
             doacao(`/doacao`, user, setUserResult)
             alert('Usuário cadastrado com sucesso!')
         }
@@ -83,11 +86,11 @@ function CadastroDoacao() {
                 <Box paddingX={15} marginTop={10}>
                     <form onSubmit={onSubmit}>
                         <MuiThemeProvider theme={theme}>
-                            <TextField value={user.Titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="Titulo" label="Titulo" variant="outlined" name="Titulo" margin="normal" className="background" fullWidth></TextField>
-                            <TextField value={user.Descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='Descricao' label='Descricao' variant='outlined' name='Descricao' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.QtdProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='QtdProduto' label='QtdProduto' variant='outlined' name='QtdProduto' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.QtdLimite} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='QtdLimite' label='QtdLimite' variant='outlined' name='QtdLimite' margin='normal' className="background" fullWidth></TextField>
-                            <TextField value={user.URL_Imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='URL_Imagem' label='URL_Imagem' variant='outlined' name='URL_Imagem' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="Titulo" label="Titulo" variant="outlined" name="Titulo" margin="normal" className="background" fullWidth></TextField>
+                            <TextField value={user.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='Descricao' label='Descricao' variant='outlined' name='Descricao' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.qtdProduto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='QtdProduto' label='QtdProduto' variant='outlined' name='QtdProduto' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.qtdLimite} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='QtdLimite' label='QtdLimite' variant='outlined' name='QtdLimite' margin='normal' className="background" fullWidth></TextField>
+                            <TextField value={user.urL_Imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='URL_Imagem' label='URL_Imagem' variant='outlined' name='URL_Imagem' margin='normal' className="background" fullWidth></TextField>
                         </MuiThemeProvider>
                     </form>
                 </Box>

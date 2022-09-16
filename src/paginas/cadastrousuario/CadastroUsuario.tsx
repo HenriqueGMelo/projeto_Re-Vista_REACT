@@ -30,10 +30,10 @@ function CadastroUsuario() {
             nome: "",
             email: "",
             senha: "",
-            tipo: "",
-            condicao: "",
+            endereco: "",
             documento: "",
-            endereco: ""
+            tipo: "",
+            condicao: ""
         }
     )
 
@@ -43,10 +43,10 @@ function CadastroUsuario() {
             nome: "",
             email: "",
             senha: "",
-            tipo: "",
-            condicao: "",
+            endereco: "",
             documento: "",
-            endereco: ""
+            tipo: "",
+            condicao: ""
         }
     )
 
