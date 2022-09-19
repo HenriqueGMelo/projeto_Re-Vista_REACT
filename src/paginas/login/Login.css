@@ -1,11 +1,14 @@
 
-.imagem{background-image: url(https://images.pexels.com/photos/6348123/pexels-photo-6348123.jpeg?auto=compress&cs=tinysrgb&w=1600);
+.imagem{background-image: url(../../assets/2.png);  
 background-repeat: no-repeat;
 width: 100vh;
 min-height: 100vh;
-background-size: cover;
-background-position: center;}
+background-position: center;
+}
+.back3{background-color: rgba(255, 255, 255, 0.552);
+   
 
+}
 .fundo4{
     background-color: white;
 }

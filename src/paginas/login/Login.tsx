@@ -13,10 +13,10 @@ import { createTheme } from "@material-ui/core/styles";
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#3c7000",
-      main: "#3c7000",
-      dark: "#3c7000",
-      contrastText: "#3c7000",
+      light: "#36607a",
+      main: "#36607a",
+      dark: "#36607a",
+      contrastText: "#36607a",
     },
   },
 });
@@ -73,20 +73,54 @@ function Login() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center"  >
-      <Grid xs={6} className="imagem">
-
-      </Grid>
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className="back3"
+    >
+      <Grid xs={6} className="imagem "></Grid>
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={onSubmit}>
-            <Typography variant="h3" gutterBottom component="h3" align="center" className="texto1"> Entrar</Typography>
-           
+            <Typography
+              variant="h3"
+              gutterBottom
+              component="h3"
+              align="center"
+              className="texto1"
+            >
+              {" "}
+              Entrar
+            </Typography>
+
             <MuiThemeProvider theme={theme}>
-              <TextField className="fundo4" value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="email" label="E-mail" variant="outlined" name="email" margin="normal" fullWidth></TextField>
-              <TextField className="fundo4" value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="Senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth></TextField>
+              <TextField
+                className="fundo4"
+                value={userLogin.email}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="email"
+                label="E-mail"
+                variant="outlined"
+                name="email"
+                margin="normal"
+                fullWidth
+              ></TextField>
+              <TextField
+                className="fundo4"
+                value={userLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="senha"
+                label="Senha"
+                variant="outlined"
+                name="senha"
+                margin="normal"
+                type="password"
+                fullWidth
+              ></TextField>
             </MuiThemeProvider>
-           
+
             <Box marginTop={2} textAlign="center">
               <Button type="submit" variant="contained" className="btn">
                 Logar
@@ -95,15 +129,23 @@ function Login() {
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
-              <Typography variant="subtitle1" gutterBottom align="center">Não tem uma conta?</Typography>
+              <Typography variant="subtitle1" gutterBottom align="center">
+                Não tem uma conta?
+              </Typography>
             </Box>
             <Link to="/cadastrousuario" className="text-decoration">
-              <Typography variant="subtitle1" gutterBottom align="center" className="cadastro">Cadastre-se</Typography>
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                align="center"
+                className="cadastro"
+              >
+                Cadastre-se
+              </Typography>
             </Link>
           </Box>
         </Box>
       </Grid>
-
     </Grid>
   );
 }
