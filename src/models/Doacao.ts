@@ -7,7 +7,7 @@ interface Doacao{
     qtdProduto: string;
     qtdLimite: string;
     urL_Imagem: string;
-    criador: User
+    criador: User;
 }
 
 export default Doacao;

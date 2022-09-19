@@ -21,6 +21,32 @@ const theme = createTheme({
     },
 });
 
+const BLACK_LIST_DOCUMENTO_ARRAY = [
+    //CPF
+    '00000000000',
+    '11111111111',
+    '22222222222',
+    '33333333333',
+    '44444444444',
+    '55555555555',
+    '66666666666',
+    '77777777777',
+    '88888888888',
+    '99999999999',
+
+    //CNPJ
+    '00000000000000',
+    '11111111111111',
+    '22222222222222',
+    '33333333333333',
+    '44444444444444',
+    '55555555555555',
+    '66666666666666',
+    '77777777777777',
+    '88888888888888',
+    '99999999999999',
+];
+
 function CadastroUsuario() {
 
     let history = useNavigate();
@@ -62,17 +88,119 @@ function CadastroUsuario() {
     }
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        const result = ValidaEFormataCPFouCNPJ(user.documento);
+        console.log(result)
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
     }
 
+    /**
+     * Caso documento seja valido retorna ele formatado,
+     * caso não retorna uma string vazia.
+     *
+     * @export
+     * @param {(string | undefined)} documento
+     * @returns {string}
+     */
+
+    function ValidaEFormataCPFouCNPJ(documento: string | undefined): string {
+        if (typeof documento !== 'string') {
+            return '';
+        }
+        //retira os caracteres indesejados...
+        const documentoClear = documento.replace(/[^0-9]*/g, '');
+
+        if (documentoClear.length === 11) {
+            //realizar a formatação... (CPF)
+            if (ValidCpf(documentoClear)) {
+                return documentoClear.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            } else {
+                return '';
+            }
+        } else if (documentoClear.length === 14) {
+            //realizar a formatação... (CNPJ)
+            if (ValidCnpj(documentoClear)) {
+                return documentoClear.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+            } else {
+                return '';
+            }
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * Função para validar CPF.
+     *
+     * @param {string} cpf_a_validar
+     * @returns {boolean}
+     */
+
+    function ValidCpf(cpf: string): boolean {
+        // Verificando e validando CPF
+        if (!cpf || cpf.length !== 11 || BLACK_LIST_DOCUMENTO_ARRAY.indexOf(cpf) !== -1 ? true : false) return false;
+
+        // <-- Validação
+        let soma = 0;
+        let resto;
+        for (let i = 1; i <= 9; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.substring(9, 10))) return false;
+        soma = 0;
+        for (let i = 1; i <= 10; i++) soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
+        resto = (soma * 10) % 11;
+        if (resto === 10 || resto === 11) resto = 0;
+        if (resto !== parseInt(cpf.substring(10, 11))) return false;
+        return true;
+        // Validação -->
+    }
+
+    /**
+     * Função para validar CNPJ.
+     *
+     * @param {string} cnpj_a_validar
+     * @returns {boolean}
+     */
+    function ValidCnpj(cnpj: string): boolean {
+        // Verificando e validando CNPJ
+        if (!cnpj || cnpj.length !== 14 || BLACK_LIST_DOCUMENTO_ARRAY.indexOf(cnpj) !== -1 ? true : false) return false;
+
+        // <-- Validação
+        let tamanho = cnpj.length - 2;
+        let numeros = cnpj.substring(0, tamanho);
+        const digitos = cnpj.substring(tamanho);
+        let soma = 0;
+        let pos = tamanho - 7;
+        for (let i = tamanho; i >= 1; i--) {
+            soma += Number(numeros.charAt(tamanho - i)) * pos--;
+            if (pos < 2) pos = 9;
+        }
+        let resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+        if (resultado !== Number(digitos.charAt(0))) return false;
+        tamanho = tamanho + 1;
+        numeros = cnpj.substring(0, tamanho);
+        soma = 0;
+        pos = tamanho - 7;
+        for (let i = tamanho; i >= 1; i--) {
+            soma += Number(numeros.charAt(tamanho - i)) * pos--;
+            if (pos < 2) pos = 9;
+        }
+        resultado = soma % 11 < 2 ? 0 : 11 - (soma % 11);
+        if (resultado !== Number(digitos.charAt(1))) return false;
+        return true;
+        // Validação -->
+    }
+
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha === user.senha) {
+        const result = ValidaEFormataCPFouCNPJ(user.documento);
+        if (confirmarSenha === user.senha && result !== '' && user.email !== '' && user.nome !== '' && user.endereco !== '') {
             cadastroUsuario(`/api/Usuarios/cadastrar`, user, setUserResult)
             alert('Usuário cadastrado com sucesso!')
+            history('/login')
         }
         else {
             alert('Dados inconsistentes. Por favor, verifique as informações do cadastro.')
