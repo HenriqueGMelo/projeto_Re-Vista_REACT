@@ -31,7 +31,7 @@ function Home() {
 
     // segundo carrossel
 
-    const [radioState1, setRadioState1] = useState('Banana');
+    const [radioState1, setRadioState1] = useState('Agasalho');
     const [count1, setCount1] = useState(0);
 
     const imagesOpt1 = [
@@ -57,7 +57,7 @@ function Home() {
 
     // terceiro carrossel    
 
-    const [radioState2, setRadioState2] = useState('Banana');
+    const [radioState2, setRadioState2] = useState('Agasalho');
     const [count2, setCount2] = useState(0);
 
     const imagesOpt2 = [
@@ -85,7 +85,7 @@ function Home() {
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" >
                 <Grid>
-                    <section className='slider carousel1'>
+                    <section className='slider'>
                         <label htmlFor={radioState}>
                             {imagesOpt.map(({ value: text }: any) => {
                                 return (
@@ -115,7 +115,7 @@ function Home() {
                 </Grid>
                 <Grid xs={7}>
                     <Typography variant='h2' className='h1' >O que fazemos?</Typography>
-                    <Box className='fazemos' >
+                    <Box className='fazemos'>
                         <Box className='fazemosbox'>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
                                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
@@ -211,12 +211,12 @@ function Home() {
                 </Grid>
 
                 <Grid className='carrossel1'>
-                    <section className='slider1 carousel1'>
+                    <section className='slider1 '>
                         <label htmlFor={radioState1}>
                             {imagesOpt1.map(({ value: text }: any) => {
                                 return (
                                     <>
-                                        <input type="radio" name="slide" value={text} checked={text === radioState1} onChange={(e) => onRadioChange1(e)} />
+                                        <input type="radio" name="slide1" value={text} checked={text === radioState1} onChange={(e) => onRadioChange1(e)} />
                                     </>
                                 );
                             })}
@@ -245,12 +245,12 @@ function Home() {
                 </Grid>
 
                 <Grid className='carrossel2'>
-                    <section className='slider2 carousel1'>
+                    <section className='slider2'>
                         <label htmlFor={radioState2}>
                             {imagesOpt2.map(({ value: text }: any) => {
                                 return (
                                     <>
-                                        <input type="radio" name="slide" value={text} checked={text === radioState2} onChange={(e) => onRadioChange2(e)} />
+                                        <input type="radio" name="slide2" value={text} checked={text === radioState2} onChange={(e) => onRadioChange2(e)} />
                                     </>
                                 );
                             })}

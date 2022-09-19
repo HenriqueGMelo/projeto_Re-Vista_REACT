@@ -18,3 +18,8 @@ export const doacao = async(url: any, dados: any, setDado: any) => {
     const resposta = await api.post(url, dados)
     setDado(resposta.data)
 }
+
+export const listar =  async(url: any, setDado: any, header: any) => {
+    const resposta = await api.get(url, header)
+    setDado(resposta.data)
+}
