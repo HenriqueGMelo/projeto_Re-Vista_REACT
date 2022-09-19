@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+<p align="center">
+<img src="https://user-images.githubusercontent.com/101284814/191094862-00f08076-e6ea-4a69-8027-ded8512656d9.png">
+ </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <img width=30 height=30 src="https://user-images.githubusercontent.com/101284814/191095063-daffbd89-0b86-4bb8-9db7-084feac953cf.png"> Quem somos:
 
-## Available Scripts
+O Re vista é um projeto com base em um E-commerce que se preocupa com o consumo e a produção sustentável, com base na ODS número 12 da ONU e que tem como objetivo a captação de roupas em bom estado que possam ser doadas por grandes empresas ou por pessoas. Havendo assim a redistribuição dessas roupas para as ONGs que necessitarem de doação, para oferecê-las às pessoas necessitadas.
 
-In the project directory, you can run:
+## <img width=30 height=30 src="https://user-images.githubusercontent.com/101284814/191095063-daffbd89-0b86-4bb8-9db7-084feac953cf.png"> Nosso objetivo:
 
-### `npm start`
+O nosso projeto tem a ideia de estimular o consumo responsável e de forma sustentável, das roupas doadas através do nosso portal, onde há o cadastro dos nossos doadores parceiros e então as doações são encaminhadas para a ONG que fizer a solicitação.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## <img width=30 height=30 src="https://user-images.githubusercontent.com/101284814/191095063-daffbd89-0b86-4bb8-9db7-084feac953cf.png"> Ferramentas usadas:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+C# | ASP.NET | .NET | Postman | SQL Server <br>
+REACT | TypeScript | HTML | CSS  <br>
+VScode | Visual Studio 2022 <br>
 
-### `npm test`
+## <img width=30 height=30 src="https://user-images.githubusercontent.com/101284814/191095063-daffbd89-0b86-4bb8-9db7-084feac953cf.png"> Contato com os desenvolvedores:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-> [ALOE HEROS](https://www.linkedin.com/in/aloe-heros-7b2465249/) <br>
+-> [GABRIEL MARINS](https://www.linkedin.com/in/gabriel-marins-rodrigues/) <br>
+-> [HENRIQUE MELO](https://www.linkedin.com/in/henrique-melo-6867b4127/) <br>
+-> [JESUS FARIAS](https://www.linkedin.com/in/fariassjesus/) <br>
+-> [LUCAS FERNANDES](https://www.linkedin.com/in/lucas-fernandes-248467249/) <br>
+-> [VICTOR COSTA](https://www.linkedin.com/in/victor-costa-55314b188/) <br>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
