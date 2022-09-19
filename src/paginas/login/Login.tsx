@@ -6,7 +6,6 @@ import './Login.css';
 import useLocalStorage from "react-use-localstorage";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service"
-
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
 
@@ -22,12 +21,23 @@ const theme = createTheme({
   },
 });
 
+const user = {
+  id: 0,
+  nome: "",
+  email: "",
+  senha: "",
+  endereco: "",
+  documento: "",
+  tipo: "",
+  condicao: "",
+}
 
 function Login() {
 
   let history = useNavigate();
 
   const [token, setToken] = useLocalStorage('token');
+  const [dataUser, setDataUser] = useLocalStorage('user', JSON.stringify(user));
 
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
@@ -53,7 +63,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await login(`/api/Usuarios/logar`, userLogin, setToken)
+      await login(`/api/Usuarios/logar`, userLogin, setToken, setDataUser)
 
       alert("Usuário logado com sucesso!")
     }
@@ -64,19 +74,19 @@ function Login() {
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center"  >
-        <Grid xs={6} className="imagem">
+      <Grid xs={6} className="imagem">
 
-        </Grid>
+      </Grid>
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={onSubmit}>
             <Typography variant="h3" gutterBottom component="h3" align="center" className="texto1"> Entrar</Typography>
-
+           
             <MuiThemeProvider theme={theme}>
               <TextField className="fundo4" value={userLogin.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="email" label="E-mail" variant="outlined" name="email" margin="normal" fullWidth></TextField>
               <TextField className="fundo4" value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id="senha" label="Senha" variant="outlined" name="senha" margin="normal" type="password" fullWidth></TextField>
             </MuiThemeProvider>
-
+           
             <Box marginTop={2} textAlign="center">
               <Button type="submit" variant="contained" className="btn">
                 Logar
@@ -93,7 +103,7 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      
+
     </Grid>
   );
 }
