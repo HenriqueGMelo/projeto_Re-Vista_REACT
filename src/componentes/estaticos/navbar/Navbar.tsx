@@ -36,7 +36,7 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/doacao" className="text-decorator-none">
+            <Link to="/cadastrodoacao" className="text-decorator-none">
               <Box marginX={3}>
                 <Typography variant="h6" className="cursor">
                   Doação
