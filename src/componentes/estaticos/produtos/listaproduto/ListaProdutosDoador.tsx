@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './ListaProduto.css';
 import { Box } from '@mui/material'
-import { Button, Card, CardActions, CardContent, Typography, CardMedia, CardActionArea } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardActionArea, CardMedia, Typography } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
 import User from '../../../../models/User';
 
 
-function ListaProduto() {
+function ListaProdutosDoador() {
     const [produtos, setProdutos] = useState<Produto[]>([])
     const [token, setToken] = useLocalStorage('token')
+    const [dataUser] = useLocalStorage('user')
+    const userLogado = JSON.parse(dataUser);
     const [user, setUser] = useState<User[]>([])
     let navigate = useNavigate();
 
@@ -21,9 +22,9 @@ function ListaProduto() {
             navigate("/login")
         }
     }, [token])
-   
+
     async function getProduto() {
-        await listar("/api/Produtos", setProdutos, {
+        await listar(`/produtos/id/empresas/${userLogado.id}`, setProdutos, {
             headers: {
                 'Authorization': token
             }
@@ -41,7 +42,7 @@ function ListaProduto() {
         )
     }
     return (
-        <>        
+        <>
             {
                 produtos.map(produto => (
                     <Box>
@@ -95,4 +96,4 @@ function ListaProduto() {
 
 }
 
-export default ListaProduto;
+export default ListaProdutosDoador;

@@ -1,0 +1,11 @@
+.boxcard {
+    display: 'flex';
+    justify-content: space-around;
+    flex-wrap: 'wrap';
+    width: 25vw;
+}
+
+.size {
+    width: 25vw;
+
+}

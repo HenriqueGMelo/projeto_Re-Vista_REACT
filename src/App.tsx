@@ -9,6 +9,7 @@ import CadastroUsuario from  './paginas/cadastrousuario/CadastroUsuario';
 import Sobre from './paginas/sobre/Sobre';
 import CadastroDoacao from './paginas/doacao/CadastroDoacao';
 import ListaProduto from './componentes/estaticos/produtos/listaproduto/ListaProduto';
+import ListaProdutosDoador from './componentes/estaticos/produtos/listaproduto/ListaProdutosDoador';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
               <Route path="/doacao" element={<CadastroDoacao />} />
-              <Route path="/produtos" element={<ListaProduto />} />              
+              <Route path="/produtos" element={<ListaProduto />} />   
+              <Route path="/Produtos/id/empresas/{idUsuario}" element={<ListaProdutosDoador />} />
             </Routes>
           </div>
         <Footer />
