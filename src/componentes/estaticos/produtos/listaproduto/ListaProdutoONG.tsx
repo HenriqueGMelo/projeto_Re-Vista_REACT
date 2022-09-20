@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './ListaProduto.css';
-import { Card, CardActions, CardContent, CardActionArea, Box } from '@mui/material'
-import { Button,  Typography, CardMedia, Grid } from "@material-ui/core";
+import { Box } from '@mui/material'
+import { Button, Card, CardActions, CardContent, CardActionArea, CardMedia, Typography, Grid } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
 import User from '../../../../models/User';
 
 
-function ListaProduto() {
+function ListaProdutosDoador() {
     const [produtos, setProdutos] = useState<Produto[]>([])
     const [token, setToken] = useLocalStorage('token')
+    const [dataUser] = useLocalStorage('user')
+    const userLogado = JSON.parse(dataUser);
     const [user, setUser] = useState<User[]>([])
     let navigate = useNavigate();
 
@@ -21,9 +22,11 @@ function ListaProduto() {
             navigate("/login")
         }
     }, [token])
-   
+
+// usar outra lógica para buscar o id? ***********************
+
     async function getProduto() {
-        await listar("/api/Produtos", setProdutos, {
+        await listar(`/api/Produtos/id/empresas/${userLogado.id}`, setProdutos, {
             headers: {
                 'Authorization': token
             }
@@ -41,7 +44,7 @@ function ListaProduto() {
         )
     }
     return (
-        <>        
+        <>
             {
                 produtos.map(produto => (
                     <Grid className='grid'>  
@@ -81,4 +84,4 @@ function ListaProduto() {
 
 }
 
-export default ListaProduto;
+export default ListaProdutosDoador;

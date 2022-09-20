@@ -24,7 +24,7 @@ function ListaProdutosDoador() {
     }, [token])
 
     async function getProduto() {
-        await listar(`/produtos/id/empresas/${userLogado.id}`, setProdutos, {
+        await listar(`/api/produtos/id/empresas/${userLogado.id}`, setProdutos, {
             headers: {
                 'Authorization': token
             }

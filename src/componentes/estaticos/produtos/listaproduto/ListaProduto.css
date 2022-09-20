@@ -1,11 +1,25 @@
-.boxcard {
-    display: 'flex';
-    justify-content: space-around;
-    flex-wrap: 'wrap';
-    width: 25vw;
+.box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 8vh;
+    width: 25vw !important;
+    height: 50vh;
+    text-decoration: none;
 }
 
-.size {
-    width: 25vw;
+.boxcard {
+    display: flex;
+    justify-content: space-between;
 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+    margin-top: 8vh;
+    width: 25vw !important;
+    min-height: 50vh !important;
 }
