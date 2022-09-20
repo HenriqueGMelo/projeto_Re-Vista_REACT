@@ -1,8 +1,14 @@
 .carousel1 {
     width: 100vw;
-    height: 60vh;
-    background-image: url(https://www.castecnologia.com.br/wp-content/uploads/2020/03/fundo-recuperacao-perdas-comerciais-energia.png);
+    height: 80vh;
+    background-image: url(../../assets/Sobre.png);
+    background-repeat: no-repeat;
 
+}
+
+.sobre1{
+    max-width: 100%;
+   
 }
 
 .text3{
@@ -27,7 +33,6 @@
     align-items: flex-start;
     width: 120vh;
     margin: 30px;
-    
 }
 
 .fazemosbox1 p {
@@ -43,13 +48,14 @@
     align-items: center;
     align-content: stretch;
     margin-top: -30px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.697);
     opacity: 80%;
-    
 }
-
+.semfins{
+    margin-top: 50px;
+}
 .fundoHenrique{
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.478);
 }
 .h2 {
     color: #55a8dc;
@@ -64,7 +70,6 @@
     flex-direction: column;
     justify-content: center;
     margin: 10px;
-
     max-width: 80%;
 }
 
@@ -73,8 +78,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
 }
 .caixaInte22 {
     display: flex;
@@ -97,7 +101,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 90%;
     margin-top: -30px;
-    text-align: center;
+    text-align: center;    
 }
+
