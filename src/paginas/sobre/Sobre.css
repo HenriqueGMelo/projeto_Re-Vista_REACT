@@ -43,12 +43,12 @@
     align-items: center;
     align-content: stretch;
     margin-top: -30px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     opacity: 80%;
     
 }
 
-.fundo3{
+.fundoHenrique{
     background-color: rgb(255, 255, 255);
 }
 .h2 {
@@ -65,7 +65,7 @@
     justify-content: center;
     margin: 10px;
 
-    max-width: 60%;
+    max-width: 80%;
 }
 
 .caixaInte2{
@@ -97,7 +97,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 60%;
+    max-width: 80%;
     margin-top: -30px;
     text-align: center;
 }

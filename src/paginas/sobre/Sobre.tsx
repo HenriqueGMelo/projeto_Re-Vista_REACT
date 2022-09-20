@@ -19,8 +19,8 @@ function Sobre () {
           justifyContent="center"
           alignItems="center"
         >
-          <Grid className="carousel1"></Grid>
-          <Grid className="fundo3">
+           <Grid className="carousel1"></Grid> 
+          <Grid>
             <Box className="fazemos1">
               <h1 className="h1 text3">Nossa Missão</h1>
               <Box className="fazemosbox1">
@@ -94,7 +94,7 @@ function Sobre () {
           alignItems="center"
         >
           <h1 className="fazemos1 h1 text3"> Integrantes</h1>
-          <Box className="caixaInte fundo3">
+          <Box className="caixaInte fundoHenrique">
             <Box className="caixaInte2">
               <Box className="caixaInte3 ">
                 <img src={Aloe} alt="Aloe" />
