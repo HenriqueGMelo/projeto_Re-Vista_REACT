@@ -10,6 +10,7 @@ import Sobre from './paginas/sobre/Sobre';
 import ListaProduto from './componentes/estaticos/produtos/listaproduto/ListaProduto';
 import ListaProdutosDoador from './componentes/estaticos/produtos/listaproduto/ListaProdutosDoador';
 import CadastroDoacao from './paginas/cadastrodoacao/CadastroDoacao';
+import DashboardDoador from './paginas/dashboard/Dashboard';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/produtos" element={<ListaProduto />} />   
               <Route path="/Produtos/id/empresas/{idUsuario}" element={<ListaProdutosDoador />} />
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
+              <Route path="/dashboard" element={<DashboardDoador />} />
             </Routes>
           </div>
         <Footer />
