@@ -8,6 +8,9 @@ import Henrique from "../../assets/Henrique.png";
 import Lucas from "../../assets/Lucas.png";
 import Victor from "../../assets/Victor.png";
 import Jesus from "../../assets/Jesus.png";
+import sobre1 from "../../assets/sobre1.png";
+import sobre2 from "../../assets/sobre2.png";
+import sobre3 from "../../assets/sobre3.png";
 
 
 function Sobre () {
@@ -19,69 +22,56 @@ function Sobre () {
           justifyContent="center"
           alignItems="center"
         >
-           <Grid className="carousel1"></Grid> 
+          <Grid className="carousel1"></Grid>
           <Grid>
             <Box className="fazemos1">
-              <h1 className="h1 text3">Nossa Missão</h1>
+              <h1 className="h1 text3">Nosso trabalho</h1>
               <Box className="fazemosbox1">
                 <Box className="BoxIn">
                   <h1 className="h2">Coleta</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Blanditiis et sapiente odit, eius voluptatibus odio
-                    repudiandae. Officia totam tenetur, illum velit molestias
-                    error, modi, enim quibusdam quod maiores dicta eligendi.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores autem, quidem fugit repudiandae officiis culpa quas
+                    A coleta de todas as roupas que recebemos são frutos de
+                    doações, seja de pessoas físicas ou jurídicas. Basta com que
+                    os doadores se cadastrem em nosso E-Commerce, estejam
+                    logados, em seguida acessando a página de doação preencham
+                    todas as informações necessárias e concluem a doação
                   </p>
                 </Box>
                 <Box>
-                  <img
-                    src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                    alt=""
-                  />
+                  <img src={sobre1} />
                 </Box>
               </Box>
             </Box>
             <Box className="fazemos1">
               <Box className="fazemosbox1">
                 <Box>
-                  <img
-                    src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                    alt=""
-                  />
+                  <img src={sobre2} />
                 </Box>
                 <Box className="BoxIn">
-                  <h1 className="h3">Coleta</h1>
+                  <h1 className="h3">Envio para ONG's parceiras</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Blanditiis et sapiente odit, eius voluptatibus odio
-                    repudiandae. Officia totam tenetur, illum velit molestias
-                    error, modi, enim quibusdam quod maiores dicta eligendi.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores autem, quidem fugit repudiandae officiis culpa quas
+                    O envio das roupas para as ONG`s parceiras acontecem
+                    mediante o cadastro destas em nosso E-Commerce, onde já
+                    cadastradas acessam sua conta e podem então solicitar as
+                    doações disponíveis, assim como quantidade respeitando o
+                    limite permitido
                   </p>
                 </Box>
               </Box>
             </Box>
             <Box className="fazemos1">
               <Box className="fazemosbox1">
-                <Box className="BoxIn">
-                  <h1 className="h2">Coleta</h1>
+                <Box className="BoxIn semfins">
+                  <h1 className="h2">Sem fins lucrativos</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Blanditiis et sapiente odit, eius voluptatibus odio
-                    repudiandae. Officia totam tenetur, illum velit molestias
-                    error, modi, enim quibusdam quod maiores dicta eligendi.
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores autem, quidem fugit repudiandae officiis culpa quas
+                    O nosso trabalho não visa fins lucrativos, buscamos
+                    conscientizar e propagar o consumo e produção sustentável
+                    relacionado a roupas, e assim proporcionando com que todos
+                    possam contribuir ajudando a vestir quem precisa
                   </p>
                 </Box>
                 <Box>
-                  <img
-                    src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                    alt=""
-                  />
+                  <img src={sobre3} />
                 </Box>
               </Box>
             </Box>
@@ -112,8 +102,8 @@ function Sobre () {
                   <h1 className="h2">Gabriel Marins</h1>
                   <Box className="caixaInte4">
                     <h2>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Officiis quos eius similique dignissimos, ratione est.
+                      Desenvolvedor .NET Jr FullStack | Asp.net | C# | HTML |
+                      CSS | React | TypeScript
                     </h2>
                   </Box>
                 </Box>
@@ -124,8 +114,8 @@ function Sobre () {
                   <h1 className="h3">Henrique Melo</h1>
                   <Box className="caixaInte4">
                     <h2>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Officiis quos eius similique dignissimos, ratione est.
+                      Graduando em Engenharia Elétrica Desenvolvedor .NET / C# /
+                      ASP.NET / SQL Server /React
                     </h2>
                   </Box>
                 </Box>
@@ -137,8 +127,8 @@ function Sobre () {
                 <h1 className="h2">Jesus Farias</h1>
                 <Box className="caixaInte4">
                   <h2>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Officiis quos eius similique dignissimos, ratione est.
+                    Software Engineering's Student | Fullstack Developer | C# |
+                    ASPNET | React | TypeScript <br/> JavaScript
                   </h2>
                 </Box>
               </Box>
@@ -148,8 +138,8 @@ function Sobre () {
                   <h1 className="h3">Lucas Fernandes</h1>
                   <Box className="caixaInte4">
                     <h2>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Officiis quos eius similique dignissimos, ratione est.
+                      Full Stack Developer Jr. | C# | ASP.NET | React | SQL |
+                      Git
                     </h2>
                   </Box>
                 </Box>
@@ -161,8 +151,8 @@ function Sobre () {
                   <h1 className="h2">Victor Costa</h1>
                   <Box className="caixaInte4">
                     <h2>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Officiis quos eius similique dignissimos, ratione est.
+                      Estudante de Jogos digitais e Desenvolvedor .NET
+                      C#/ASP.NET/ Typescript
                     </h2>
                   </Box>
                 </Box>
