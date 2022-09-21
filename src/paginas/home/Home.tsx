@@ -255,7 +255,7 @@ function Home() {
             <Typography className="h1" variant="h2">
               Como posso participar?
             </Typography>
-            <Box className="box-btn">
+            <Box className="box-btn"> 
               <Button className="bt-doador">Quero ser um doador</Button>
               <Button className="bt-ong">Quero receber doações</Button>
             </Box>

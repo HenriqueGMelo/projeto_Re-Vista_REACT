@@ -54,18 +54,19 @@
 }
 
 
-
 /* Fim carrossel */
 
 .h1 {
     color: #36607a;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.697);
+    opacity: 75%;
     padding: 5vh;
     text-align: center;
 }
 
 .fazemos {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.697);
+    opacity: 80%;
     display: flex;
     flex-direction: column ;
 }
@@ -86,9 +87,9 @@
 /* Cards */
 .gridcards {
     margin-top: 8vh;
+    margin-bottom: 100px;
     display: flex;
-    justify-content: space-around;    
-    
+    justify-content: space-around;     
 }
 
 .cards {
@@ -138,12 +139,14 @@
     padding: 7vh;
     color: #36607a;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.697);
+    opacity: 75%;
 }
 
 .h1car2 {
     padding: 7vh;
     color: #df604f;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.697);
+    opacity: 80%;
 }
