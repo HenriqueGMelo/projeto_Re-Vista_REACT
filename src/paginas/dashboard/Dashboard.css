@@ -1,7 +1,60 @@
-.link {
-    text-decoration: none;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.acesso-doacoes {
-    
+.container .container1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.titulo {
+    color: #36607a;
+    text-align: center;
+    font-size: 5vh;
+    background-color: white;
+    margin: 5vh;
+}
+
+.button {
+    background-color: #36607a; 
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    padding: 1vh 1vw;
+    border: none;
+    border-radius: 10px;
+    width: 25vw;
+}
+
+.img-doador {
+    height: 40vh;
+}
+
+/* Estilização ONGs */
+
+.titulo-ong {
+    color: #df604f;
+    text-align: center;
+    font-size: 5vh;
+    background-color: white;
+    margin: 5vh;
+}
+
+.button-ong {
+    background-color: #df604f; 
+    color: white;
+    font-size: 2vh;
+    cursor: pointer;
+    padding: 1vh 1vw;
+    border: none;
+    border-radius: 10px;
+    width: 25vw;
 }
