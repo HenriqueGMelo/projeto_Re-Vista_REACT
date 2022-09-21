@@ -93,9 +93,9 @@ function Sobre() {
                   <GitHubIcon className='icone' />
                 </a>
               </div>
-              <h3>Aloe Heros</h3>
-              <h4>Developer FullStack</h4>
-              <h4>Preferência por FRONT-END.</h4>
+              <h2>Aloe Heros</h2>
+              <h3>Developer FullStack</h3>
+              <h3>Preferência por FRONT-END.</h3>
             </article>
             <article>
               <img src={Kamui} alt="Gabriel" />
@@ -107,9 +107,9 @@ function Sobre() {
                   <GitHubIcon className='icone' />
                 </a>
               </div>
-              <h3>Gabriel Marins</h3>
-              <h4>Developer FullStack</h4>
-              <h4>Preferência por FRONT-END.</h4>
+              <h2>Gabriel Marins</h2>
+              <h3>Developer FullStack</h3>
+              <h3>Preferência por FRONT-END.</h3>
             </article>
             <article>
               <img src={Henrique} alt="Henrique" />
@@ -121,12 +121,12 @@ function Sobre() {
                   <GitHubIcon className='icone' />
                 </a>
               </div>
-              <h3>Henrique de Godoi Melo</h3>
-              <h4>Developer FullStack;</h4>
-              <h4>Preferência por BACK-END.</h4>
+              <h2>Henrique de Godoi Melo</h2>
+              <h3>Developer FullStack</h3>
+              <h3>Preferência por BACK-END.</h3>
             </article>
           </Grid>
-          <Grid className='teste'>
+          <Grid className='teste '>
             <article>
               <img src={Lucas} alt="Lucas" />
               <div>
@@ -137,9 +137,9 @@ function Sobre() {
                   <GitHubIcon className='icone' />
                 </a>
               </div>
-              <h3>Lucas Fernandes</h3>
-              <h4>Developer FullStack;</h4>
-              <h4>Preferência por BACK-END.</h4>
+              <h2>Lucas Fernandes</h2>
+              <h3>Developer FullStack</h3>
+              <h3>Preferência por BACK-END.</h3>
             </article>
             <article>
               <img src={Victor} alt="Victor" />
@@ -152,7 +152,7 @@ function Sobre() {
                 </a>
               </div>
               <h2>Victor Costa Santos</h2>
-              <h3>Developer FullStack;</h3>
+              <h3>Developer FullStack</h3>
               <h3>Preferência por FRONT-END.</h3>
             </article>
             <article>
@@ -165,16 +165,14 @@ function Sobre() {
                   <GitHubIcon className='icone' />
                 </a>
               </div>
-              <h3>Jesus Farias</h3>
-              <h4>Developer FullStack;</h4>
-              <h4>Preferência por Back-End.</h4>
+              <h2>Jesus Farias</h2>
+              <h3>Developer FullStack</h3>
+              <h3>Preferência por FULLSTACK.</h3>
             </article>
             </Grid>
       </Grid>
     </>
   );
-
-
 }
 
 export default Sobre;
