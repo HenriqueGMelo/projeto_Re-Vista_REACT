@@ -11,9 +11,13 @@ import ListaProduto from './componentes/estaticos/produtos/listaproduto/ListaPro
 import ListaProdutosDoador from './componentes/estaticos/produtos/listaproduto/ListaProdutosDoador';
 import CadastroDoacao from './paginas/cadastrodoacao/CadastroDoacao';
 import DashboardDoador from './paginas/dashboard/Dashboard';
+import useLocalStorage from 'react-use-localstorage';
 
 
 function App() {
+  const [dataUser] = useLocalStorage('user')
+  const userLogado = JSON.parse(dataUser);
+
   return (
     <>
       <Router>
@@ -26,7 +30,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
               <Route path="/produtos" element={<ListaProduto />} />   
-              <Route path="/Produtos/id/empresas/{idUsuario}" element={<ListaProdutosDoador />} />
+              <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} />
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
             </Routes>

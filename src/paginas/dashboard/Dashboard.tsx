@@ -27,25 +27,14 @@ function DashboardDoador() {
                 {
                     <Grid xs={7}>
                             <Typography variant='h2' className='h1'>
-                                 Olá {userLogado.nome}!
+                                 Olá, {userLogado.nome}!
                             </Typography>
-                            <Box className='fazemos'>
-                                <Box className='fazemosbox'>
+                            <Box>
+                                <Box className='acesso-doacoes'>
                                     <Typography>Para acessar suas doações</Typography>
-                                    <Link to={`/api/produtos/id/empresas/${userLogado.id}`} className='link'>clique aqui</Link>
+                                    <Link to={`/produtos/id/empresas/${userLogado.id}`} className='link'>clique aqui</Link>
                                 </Box>
-                                <Box className='fazemosbox'>
-                                    <img src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png" alt="" />
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
-                                    </p>
-                                </Box>
-                                <Box className='fazemosbox'>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
-                                    </p>
-                                    <img src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png" alt="" />
-                                </Box>
+                                
                             </Box>
                     </Grid>
                 }
@@ -58,7 +47,7 @@ function DashboardDoador() {
             <>
                 {
                     <Typography variant='h1'>
-                        Olá {userLogado.nome}
+                        Olá, {userLogado.nome}
                     </Typography>
                 }
             </>

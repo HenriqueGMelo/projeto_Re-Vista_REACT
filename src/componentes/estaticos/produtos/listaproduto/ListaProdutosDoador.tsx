@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Box } from '@mui/material'
-import { Button, Card, CardActions, CardContent, CardActionArea, CardMedia, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
@@ -24,7 +23,7 @@ function ListaProdutosDoador() {
     }, [token])
 
     async function getProduto() {
-        await listar(`/api/produtos/id/empresas/${userLogado.id}`, setProdutos, {
+        await listar(`/api/Produtos/id/empresas/${userLogado.id}`, setProdutos, {
             headers: {
                 'Authorization': token
             }
@@ -42,54 +41,38 @@ function ListaProdutosDoador() {
         )
     }
     return (
-        <>
+        <section id='lista_produtos'>
             {
                 produtos.map(produto => (
-                    <Box>
-                        <Card variant="outlined" className='size boxcard'>
-                            <Card >
-                                <CardActionArea className='cards'>
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={produto.urL_Imagem}
-                                        alt="Imagem do lixão de roupas do Atacama"
-                                        
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {produto.titulo}
-                                        </Typography>
-                                        <Typography variant="body2">
-                                            {produto.descricao}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                            <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
+                    <article>
+                            <figure>
+                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                            </figure>
+                            <div>
+                                <header>
 
-                                    <Link to={`/formularioPostagem/${produto.id}`} className="text-decorator-none" >
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                                atualizar
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                    <Link to={`/deletarPostagem/${produto.id}`} className="text-decorator-none">
-                                        <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
-                                                deletar
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                </Box>
-                            </CardActions>
-                        </Card>
-                    </Box>
-                ))   
+                                    <h2>{produto.titulo}</h2>
+
+                                </header>
+                                <footer>
+                                    <p>
+                                        {produto.descricao}
+                                    </p>
+                                    <div>
+                                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                                            <button>Visualizar produto na vitrine</button>
+                                        </Link>
+                                        <h3>
+                                            Qtd: {produto.qtdLimite}
+                                        </h3>
+
+                                    </div>
+                                </footer>
+                            </div>
+                    </article>
+                ))
             }
-        </>
+        </section>
     )
 
 
