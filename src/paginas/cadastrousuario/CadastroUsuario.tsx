@@ -7,6 +7,7 @@ import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
+import { toast } from "react-toastify";
 
 
 // Crie seu próprio tema:
@@ -199,11 +200,29 @@ function CadastroUsuario() {
         const result = ValidaEFormataCPFouCNPJ(user.documento);
         if (confirmarSenha === user.senha && result !== '' && user.email !== '' && user.nome !== '' && user.endereco !== '') {
             cadastroUsuario(`/api/Usuarios/cadastrar`, user, setUserResult)
-            alert('Usuário cadastrado com sucesso!')
+            toast.success('Usuario cadastrado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             history('/login')
         }
         else {
-            alert('Dados inconsistentes. Por favor, verifique as informações do cadastro.')
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }
 

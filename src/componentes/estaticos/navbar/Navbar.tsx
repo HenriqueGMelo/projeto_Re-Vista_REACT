@@ -32,6 +32,10 @@ function Navbar() {
     <>
       <AppBar position="fixed" className="opa">
         <Toolbar className="fundo3" variant="dense">
+
+        {
+            token === ''
+              ?
           <Grid item xs={6} mx={1} className="caixa1">
             <Link to="/home" className="text-decorator-none">
               <Box marginX={3} className="texto2">
@@ -48,6 +52,24 @@ function Navbar() {
               </Box>
             </Link>
           </Grid>
+          :
+          <Grid item xs={6} mx={1} className="caixa1">
+            <Link to="/dashboard" className="text-decorator-none">
+              <Box marginX={3} className="texto2">
+                <Typography variant="h6" className="cursor">
+                  Home
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/sobre" className="text-decorator-none">
+              <Box marginX={3}>
+                <Typography variant="h6" className="cursor">
+                  Sobre
+                </Typography>
+              </Box>
+            </Link>
+          </Grid>
+        }
 
           <Grid item xs={1}>
             <Link to="/home" className="text-decorator-none">
@@ -56,6 +78,15 @@ function Navbar() {
             </Box>
             </Link>
           </Grid>
+          
+          {/* <Grid item xs={1}>
+            <Link to="/dashboard" className="text-decorator-none">
+            <Box className="caixa2">
+              <img src={logo3} className="center" alt="logo" />
+            </Box>
+            </Link>
+          </Grid> */}
+          
 
           {
             token === ''

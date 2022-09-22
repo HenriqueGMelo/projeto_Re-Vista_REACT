@@ -13,6 +13,8 @@ import CadastroDoacao from './paginas/cadastrodoacao/CadastroDoacao';
 import DashboardDoador from './paginas/dashboard/Dashboard';
 // import useLocalStorage from 'react-use-localstorage';
 import ShoppingCart from './paginas/ShoppingCart/ShoppingCart';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer />
       <Router>
         <Navbar />
           <div style={{ minHeight: '100vh'}}>
