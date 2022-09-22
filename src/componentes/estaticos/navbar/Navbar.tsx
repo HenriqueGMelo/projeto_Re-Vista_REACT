@@ -79,14 +79,6 @@ function Navbar() {
             </Link>
           </Grid>
           
-          {/* <Grid item xs={1}>
-            <Link to="/dashboard" className="text-decorator-none">
-            <Box className="caixa2">
-              <img src={logo3} className="center" alt="logo" />
-            </Box>
-            </Link>
-          </Grid> */}
-          
 
           {
             token === ''
