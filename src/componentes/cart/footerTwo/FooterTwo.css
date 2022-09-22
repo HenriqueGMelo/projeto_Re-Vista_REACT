@@ -1,0 +1,17 @@
+#footerTwo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.linha{
+    background-color: black !important;
+    height: 0px;
+}
+
+#img img{
+    width: 102px;
+    height: 52px;
+}
