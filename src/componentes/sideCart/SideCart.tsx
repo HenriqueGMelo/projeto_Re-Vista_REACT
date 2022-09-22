@@ -6,7 +6,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import DeleteIcon from '@material-ui/icons/Delete';
 import "./SideCart.css";
 import { toast } from 'react-toastify';
-// import BasicModal from '../payment/modal/Modal';
+import BasicModal from '../finalizacao/modal/Modal';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 
@@ -127,7 +127,7 @@ export default function SideCart() {
             </div>
             
             <div className='modalCart'>
-                {/* <BasicModal /> */}
+                <BasicModal />
             </div>
         </>
     );

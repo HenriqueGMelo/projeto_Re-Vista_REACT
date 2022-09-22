@@ -8,6 +8,7 @@ import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
 import './CadastroDoacao.css';
 import useLocalStorage from "react-use-localstorage";
+import { toast } from "react-toastify";
 
 // Crie seu próprio tema:
 const theme = createTheme({
@@ -104,10 +105,28 @@ export default function CadastroDoacao() {
             doacao.qtdLimite >= '') {
                 console.log(doacao);
             cadastroDoacao(`/api/Produtos`, doacao, setDoacaoResult)
-            alert('Doação registrada com sucesso!')
+            toast.success('Doação registrada com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
         else {
-            alert('Por favor, preencha os campos corretamente')
+            toast.error('Por favor, preencha os campos corretamente', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }
 

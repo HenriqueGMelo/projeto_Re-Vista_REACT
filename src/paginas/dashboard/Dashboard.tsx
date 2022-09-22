@@ -5,6 +5,7 @@ import { Typography, Grid, Button, Card } from '@material-ui/core';
 import { Box } from '@mui/material';
 import User from '../../models/User';
 import './Dashboard.css';
+import { toast } from 'react-toastify';
 
 function DashboardDoador() {
 
@@ -16,7 +17,16 @@ function DashboardDoador() {
 
     useEffect(() => {
         if (token == '') {
-            alert("Conecte-se novamente para verificar doações disponíveis")
+            toast.error('Conecte-se novamente para verificar doações disponíveis', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
             navigate("/login")
         }
     }, [token])
