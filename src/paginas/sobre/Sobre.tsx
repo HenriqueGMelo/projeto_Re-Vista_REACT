@@ -24,7 +24,7 @@ function Sobre() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid className="carousel1"></Grid>
+        <Grid  container  className="sobre"></Grid>
         <Grid>
           <Box className="fazemos1">
             <h1 className="h1 text3">Nosso trabalho</h1>
