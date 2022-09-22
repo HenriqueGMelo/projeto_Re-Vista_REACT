@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home   from './paginas/home/Home';
@@ -11,7 +11,8 @@ import ListaProduto from './componentes/estaticos/produtos/listaproduto/ListaPro
 import ListaProdutosDoador from './componentes/estaticos/produtos/listaproduto/ListaProdutosDoador';
 import CadastroDoacao from './paginas/cadastrodoacao/CadastroDoacao';
 import DashboardDoador from './paginas/dashboard/Dashboard';
-import useLocalStorage from 'react-use-localstorage';
+// import useLocalStorage from 'react-use-localstorage';
+import ShoppingCart from './paginas/ShoppingCart/ShoppingCart';
 
 
 function App() {
@@ -29,10 +30,15 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />  
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+<<<<<<< HEAD
               <Route path="/produtos" element={<ListaProduto />} />   
+=======
+              <Route path="/produtos" element={<ListaProduto />} />  
+>>>>>>> e8f2b2caf628af327a974324dfaefeec9d5b3fd8
               {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
+              <Route path='/cart' element={<ShoppingCart />} />
             </Routes>
           </div>
         <Footer />

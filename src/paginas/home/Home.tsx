@@ -257,8 +257,14 @@ function Home() {
               Como posso participar?
             </Typography>
             <Box className="box-btn"> 
+            <a href="#car-doador">
+
               <Button className="bt-doador">Quero ser um doador</Button>
+            </a>
+            <a href="#car-ong">
               <Button className="bt-ong">Quero receber doações</Button>
+
+            </a>
             </Box>
           </Grid>
           <Grid xs={6}>
@@ -267,7 +273,7 @@ function Home() {
             </Typography>
           </Grid>
 
-          <Grid className="carrossel1">
+          <Grid id='car-doador'className="carrossel1">
             <section className="slider1 ">
               <label htmlFor={radioState1}>
                 {imagesOpt1.map(({ value: text }: any) => {
@@ -305,7 +311,7 @@ function Home() {
             </Typography>
           </Grid>
 
-          <Grid className="carrossel2">
+          <Grid id='car-ong' className="carrossel2">
             <section className="slider2">
               <label htmlFor={radioState2}>
                 {imagesOpt2.map(({ value: text }: any) => {
