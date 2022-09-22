@@ -1,12 +1,11 @@
 import React, { ChangeEvent } from 'react';
 import { Drawer, Button, Divider, Badge, IconButton, Typography } from '@material-ui/core';
-import { CartProduct, useCart } from '../../hooks/useCart';
+import { CartItem, useCart } from '../../hooks/useCart';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import DeleteIcon from '@material-ui/icons/Delete';
 import "./SideCart.css";
 import { toast } from 'react-toastify';
-import BasicModal from '../finalizacao/modal/Modal';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 
@@ -18,24 +17,24 @@ export default function SideCart() {
     const [token, setToken] = useLocalStorage('token');
     const { cart, updateProductAmount, removeProduct } = useCart();
 
-    function handleProductIncrement(product: CartProduct) {
+    function handleProductIncrement(produto: CartItem) {
         const IncrementArguments = {
-            productId: product.id,
-            amount: product.qtdProduto + 1
+            idProduto: produto.id,
+            amount: produto.qtdProduto + 1
         }
         updateProductAmount(IncrementArguments)
     }
 
-    function handleProductDecrement(product: CartProduct) {
+    function handleProductDecrement(produto: CartItem) {
         const IncrementArguments = {
-            productId: product.id,
-            amount: product.qtdProduto - 1
+            idProduto: produto.id,
+            amount: produto.qtdProduto - 1
         }
         updateProductAmount(IncrementArguments)
     }
 
-    function handleRemoveProduct(productId: number) {
-        removeProduct(productId)
+    function handleRemoveProduct(idProduto: number) {
+        removeProduct(idProduto)
     }
 
     function handleClick() {
@@ -78,31 +77,31 @@ export default function SideCart() {
         <>
             <div>
                 <Divider />
-                {cart.map(product => (
-                    <div key={product.id} className="container-carrinho">
-                        <h3>{product?.titulo}</h3>
-                        <img src={product?.urL_Imagem} alt={product?.titulo} className='imgCart' />
-                        <h4>{product.qtdProduto}x</h4>
+                {cart.map(produto => (
+                    <div key={produto.id} className="container-carrinho">
+                        <h3>{produto?.titulo}</h3>
+                        <img src={produto?.urL_Imagem} alt={produto?.titulo} className='imgCart' />
+                        <h4>{produto.qtdProduto}x</h4>
 
                         <div >
                             <Button
                                 className='botoes-carrinho'
                                 type="button"
-                                disabled={product.qtdProduto <= 1}
-                                onClick={() => handleProductDecrement(product)}
+                                disabled={produto.qtdProduto <= 1}
+                                onClick={() => handleProductDecrement(produto)}
                             >
                                 <RemoveCircleOutlineIcon />
                             </Button>
                             <input
                                 type="text"
                                 readOnly
-                                value={product.qtdProduto}
+                                value={produto.qtdProduto}
                             />
                             <Button
                                 className='botoes-carrinho'
                                 type="button"
                                 data-testid="increment-product"
-                                onClick={() => handleProductIncrement(product)}
+                                onClick={() => handleProductIncrement(produto)}
                             >
                                 <AddCircleOutlineIcon />
                             </Button>
@@ -111,7 +110,7 @@ export default function SideCart() {
                             variant="contained"
                             color="secondary"
                             className='btnDelete'
-                            onClick={() => handleRemoveProduct(product.id)}
+                            onClick={() => handleRemoveProduct(produto.id)}
                             startIcon={<DeleteIcon />}>
                             Delete
                         </Button>
@@ -127,7 +126,7 @@ export default function SideCart() {
             </div>
             
             <div className='modalCart'>
-                <BasicModal />
+                {/* <BasicModal /> */}
             </div>
         </>
     );

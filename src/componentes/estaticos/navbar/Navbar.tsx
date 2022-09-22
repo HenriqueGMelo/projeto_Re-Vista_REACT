@@ -8,6 +8,7 @@ import "./Navbar.css";
 import SideCart from '../../sideCart/SideCart';
 import useLocalStorage from "react-use-localstorage";
 import { toast } from 'react-toastify';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 function Navbar() {
   const [token, setToken] = useLocalStorage('token');
@@ -98,13 +99,7 @@ function Navbar() {
                     </Typography>
                   </Box>
                 </Link>
-
-                {/* <label className="fas fa-shopping-cart" id="cart-btn">
-                            <div>
-                                <SideCart />
-                            </div>
-                        </label> */}
-
+                <SideCart />
               </Grid>
               :
               <Grid item xs={6} className="caixa1">
@@ -115,19 +110,14 @@ function Navbar() {
                     </Typography>
                   </Box>
                 </Link>
-                
                   <Box marginX={3}>
                     <Typography variant="h6" className="cursor" onClick={goLogout}>
                       Logout
                     </Typography>
                   </Box>
-
-                  {/* <label className="fas fa-shopping-cart" id="cart-btn">
-                            <div>
-                                <SideCart />
-                            </div>
-                        </label> */}
-                
+                  <Box>
+                    <SideCart />
+                  </Box>
               </Grid>
           }
           
