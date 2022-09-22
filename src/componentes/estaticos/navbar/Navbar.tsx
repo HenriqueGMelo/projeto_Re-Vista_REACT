@@ -15,15 +15,15 @@ function Navbar() {
 
   function goLogout() {
     setToken('')
-    toast.info('Você foi deslogado!', {
+    toast.info('Usuário deslogado', {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-      theme: 'colored',
-      progress: undefined
+      theme: "colored",
+      progress: undefined,
   });
     navigate('/home')
 }
@@ -76,11 +76,11 @@ function Navbar() {
                   </Box>
                 </Link>
 
-                <label className="fas fa-shopping-cart" id="cart-btn">
+                {/* <label className="fas fa-shopping-cart" id="cart-btn">
                             <div>
                                 <SideCart />
                             </div>
-                        </label>
+                        </label> */}
 
               </Grid>
               :
@@ -99,11 +99,11 @@ function Navbar() {
                     </Typography>
                   </Box>
 
-                  <label className="fas fa-shopping-cart" id="cart-btn">
+                  {/* <label className="fas fa-shopping-cart" id="cart-btn">
                             <div>
                                 <SideCart />
                             </div>
-                        </label>
+                        </label> */}
                 
               </Grid>
           }

@@ -19,8 +19,6 @@ function App() {
   // const [dataUser] = useLocalStorage('user')
   // const userLogado = JSON.parse(dataUser);
 
-
-
   return (
     <>
       <Router>
