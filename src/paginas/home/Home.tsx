@@ -82,200 +82,261 @@ function Home() {
     }, [count2, imagesOpt2]);
 
     return (
-        <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" >
-                <Grid>
-                    <section className='slider'>
-                        <label htmlFor={radioState}>
-                            {imagesOpt.map(({ value: text }: any) => {
-                                return (
-                                    <>
-                                        <input type="radio" name="slide" value={text} checked={text === radioState} onChange={(e) => onRadioChange(e)} />
-                                    </>
-                                );
-                            })}
-                        </label>
+      <>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid>
+            <section className="slider">
+              <label htmlFor={radioState}>
+                {imagesOpt.map(({ value: text }: any) => {
+                  return (
+                    <>
+                      <input
+                        type="radio"
+                        name="slide"
+                        value={text}
+                        checked={text === radioState}
+                        onChange={(e) => onRadioChange(e)}
+                      />
+                    </>
+                  );
+                })}
+              </label>
 
-                        {imagesOpt.map(({ src: url, value: text }: any) => {
-                            return (
-                                <>
-                                    {
-                                        radioState === text
-                                            ?
-                                            <img className="slider-img" src={url} alt={text} />
-                                            :
-                                            ''}
-                                </>
-                            );
-                        })}
-
-                    </section>
-
-
-                </Grid>
-                <Grid xs={7}>
-                    <Typography variant='h2' className='h1' >O que fazemos?</Typography>
-                    <Box className='fazemos'>
-                        <Box className='fazemosbox'>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
-                            </p>
-                            <img src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png" alt="" />
-                        </Box>
-                        <Box className='fazemosbox'>
-                            <img src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png" alt="" />
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
-                            </p>
-                        </Box>
-                        <Box className='fazemosbox'>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis et sapiente odit, eius voluptatibus odio repudiandae. Officia totam tenetur, illum velit molestias error, modi, enim quibusdam quod maiores dicta eligendi.
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores autem, quidem fugit repudiandae officiis culpa quas est deleniti tenetur. Unde deserunt at, libero qui fuga deleniti mollitia vitae recusandae soluta.
-                            </p>
-                            <img src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png" alt="" />
-                        </Box>
-                    </Box>
-                </Grid>
-                <Grid xs={11}>
-                    <Typography variant="h2" className='h1'>Impacto</Typography>
-                    <Grid className='gridcards'>
-                        <Card >
-                            <CardActionArea className='cards'>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image="https://ichef.bbci.co.uk/news/800/cpsprodpb/10077/production/_122955656_atacama-39.jpg.webp"
-                                    alt="Imagem do lixão de roupas do Atacama"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Ajuda a reduzir a quantidade de lixo têxtil
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla assumenda exercitationem iusto nesciunt vel excepturi, ullam aliquam reiciendis sint voluptatum fugit vitae quo, temporibus rerum officiis, totam laborum omnis odit!
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        <Card>
-                            <CardActionArea className='cards'>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image="https://www.urupes.sp.gov.br/noticias/upload/postagens/1880424090.png"
-                                    alt="Imagem de caixa de doação de roupas"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Doações mudam o mundo
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus recusandae hic voluptates maxime accusantium. Odio, facere explicabo ducimus ullam quos eveniet maxime nisi a sit adipisci amet neque dolorem non?
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        <Card>
-                            <CardActionArea className='cards'>
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image="/static/images/cards/contemplative-reptile.jpg"
-                                    alt="green iguana"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        Lizard
-                                    </Typography>
-                                    <Typography variant="body2">
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, vero atque eius aspernatur harum maiores, at illum maxime saepe commodi facilis, est necessitatibus dolores ipsam magnam nisi aliquam rem cupiditate.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-
-
-                    </Grid>
-
-                </Grid>
-                <Grid xs={10}>
-                    <Typography className='h1' variant='h2'>Como posso participar?</Typography>
-                    <Box className='box-btn'>
-                        <Button className='bt-doador'>Quero ser um doador</Button>
-                        <Button className='bt-ong'>Quero receber doações</Button>
-                    </Box>
-
-                </Grid>
-                <Grid xs={6}>
-                    <Typography className='h1car' variant='h2'>Para doadores parceiros</Typography>
-                </Grid>
-
-                <Grid className='carrossel1'>
-                    <section className='slider1 '>
-                        <label htmlFor={radioState1}>
-                            {imagesOpt1.map(({ value: text }: any) => {
-                                return (
-                                    <>
-                                        <input type="radio" name="slide1" value={text} checked={text === radioState1} onChange={(e) => onRadioChange1(e)} />
-                                    </>
-                                );
-                            })}
-                        </label>
-
-                        {imagesOpt1.map(({ src: url, value: text }: any) => {
-                            return (
-                                <>
-                                    {
-                                        radioState1 === text
-                                            ?
-                                            <img className="slider-img" src={url} alt={text} />
-                                            :
-                                            ''}
-                                </>
-                            );
-                        })}
-
-                    </section>
-
-
-                </Grid>
-
-                <Grid xs={6}>
-                    <Typography className='h1car2' variant='h2'>Para ONG's parceiras</Typography>
-                </Grid>
-
-                <Grid className='carrossel2'>
-                    <section className='slider2'>
-                        <label htmlFor={radioState2}>
-                            {imagesOpt2.map(({ value: text }: any) => {
-                                return (
-                                    <>
-                                        <input type="radio" name="slide2" value={text} checked={text === radioState2} onChange={(e) => onRadioChange2(e)} />
-                                    </>
-                                );
-                            })}
-                        </label>
-
-                        {imagesOpt2.map(({ src: url, value: text }: any) => {
-                            return (
-                                <>
-                                    {
-                                        radioState2 === text
-                                            ?
-                                            <img className="slider-img" src={url} alt={text} />
-                                            :
-                                            ''}
-                                </>
-                            );
-                        })}
-
-                    </section>
-
-
-                </Grid>
-
+              {imagesOpt.map(({ src: url, value: text }: any) => {
+                return (
+                  <>
+                    {radioState === text ? (
+                      <img className="slider-img" src={url} alt={text} />
+                    ) : (
+                      ""
+                    )}
+                  </>
+                );
+              })}
+            </section>
+          </Grid>
+          <Grid xs={7}>
+            <Typography variant="h2" className="h1">
+              O que fazemos?
+            </Typography>
+            <Box className="fazemos">
+              <Box className="fazemosbox">
+                <p>
+                  Trabalhamos com uma visão e propósito que visa atendermos e
+                  contribuirmos com a ODS da ONU de número 12 - “Consumo e
+                  Produção Sustentáveis”. De forma a implementarmos está ODS na
+                  área Têxtil, onde temos como foco o reaproveitamento de roupas
+                  em bom estado que possam ser doadas para pessoas que precisam.
+                </p>
+                <img
+                  src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
+                  alt=""
+                />
+              </Box>
+              <Box className="fazemosbox">
+                <img
+                  src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
+                  alt=""
+                />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Blanditiis et sapiente odit, eius voluptatibus odio
+                  repudiandae. Officia totam tenetur, illum velit molestias
+                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
+                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+                  autem, quidem fugit repudiandae officiis culpa quas est
+                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
+                  mollitia vitae recusandae soluta.
+                </p>
+              </Box>
+              <Box className="fazemosbox">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Blanditiis et sapiente odit, eius voluptatibus odio
+                  repudiandae. Officia totam tenetur, illum velit molestias
+                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
+                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
+                  autem, quidem fugit repudiandae officiis culpa quas est
+                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
+                  mollitia vitae recusandae soluta.
+                </p>
+                <img
+                  src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
+                  alt=""
+                />
+              </Box>
+            </Box>
+          </Grid>
+          <Grid xs={11}>
+            <Typography variant="h2" className="h1">
+              Impacto
+            </Typography>
+            <Grid className="gridcards">
+              <Card>
+                <CardActionArea className="cards">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image="https://ichef.bbci.co.uk/news/800/cpsprodpb/10077/production/_122955656_atacama-39.jpg.webp"
+                    alt="Imagem do lixão de roupas do Atacama"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Ajuda a reduzir a quantidade de lixo têxtil
+                    </Typography>
+                    <Typography variant="body2">
+                      A indústria da moda está entre as mais poluentes do mundo,
+                      depois da indústria do petróleo. De acordo com a
+                      Organização das Nações Unidas (ONU), ela é responsável por
+                      8% dos gases do efeito estufa e por 20% do desperdício de
+                      água no mundo. Com o passar do tempo, as roupas se
+                      desgastam e liberam microplásticos que acabam na
+                      atmosfera, afetando fortemente a fauna marítima ou
+                      terrestre das cercanias.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              <Card>
+                <CardActionArea className="cards">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image="https://www.urupes.sp.gov.br/noticias/upload/postagens/1880424090.png"
+                    alt="Imagem de caixa de doação de roupas"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Doações mudam o mundo
+                    </Typography>
+                    <Typography variant="body2">
+                      A doação de roupa é uma boa ação que beneficia todo mundo.
+                      Quem doa libera espaço e quem recebe agradece, ainda mais
+                      em tempos de diferenças sociais tão gritantes na nossa
+                      sociedade. Doar promove a sustentabilidade e aumenta o
+                      tempo de uso da roupa, evitando que ela vá para os lixões
+                      e polua o meio ambiente.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+              <Card>
+                <CardActionArea className="cards">
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image="https://i0.wp.com/blog.portaleducacao.com.br/wp-content/uploads/2021/08/46-Quem-sou-eu-na-sociedade_.jpg"
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      Social
+                    </Typography>
+                    <Typography variant="body2">
+                      O ato de doar contribui efetivamente com a transformação
+                      para o melhor da sociedade, das instituições e,
+                      principalmente das pessoas. Ao enxergar as necessidades do
+                      próximo e fazer algo para supri-las, nos tornamos mais
+                      justos e igualitários. Doar vai muito além de transferir
+                      gratuitamente a outra pessoa, doar é um ato de
+                      desprendimento, renúncia, entrega e amor ao próximo.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
             </Grid>
-        </>
+          </Grid>
+          <Grid xs={10}>
+            <Typography className="h1" variant="h2">
+              Como posso participar?
+            </Typography>
+            <Box className="box-btn">
+              <Button className="bt-doador">Quero ser um doador</Button>
+              <Button className="bt-ong">Quero receber doações</Button>
+            </Box>
+          </Grid>
+          <Grid xs={6}>
+            <Typography className="h1car" variant="h2">
+              Para doadores parceiros
+            </Typography>
+          </Grid>
+
+          <Grid className="carrossel1">
+            <section className="slider1 ">
+              <label htmlFor={radioState1}>
+                {imagesOpt1.map(({ value: text }: any) => {
+                  return (
+                    <>
+                      <input
+                        type="radio"
+                        name="slide1"
+                        value={text}
+                        checked={text === radioState1}
+                        onChange={(e) => onRadioChange1(e)}
+                      />
+                    </>
+                  );
+                })}
+              </label>
+
+              {imagesOpt1.map(({ src: url, value: text }: any) => {
+                return (
+                  <>
+                    {radioState1 === text ? (
+                      <img className="slider-img" src={url} alt={text} />
+                    ) : (
+                      ""
+                    )}
+                  </>
+                );
+              })}
+            </section>
+          </Grid>
+
+          <Grid xs={6}>
+            <Typography className="h1car2" variant="h2">
+              Para ONG's parceiras
+            </Typography>
+          </Grid>
+
+          <Grid className="carrossel2">
+            <section className="slider2">
+              <label htmlFor={radioState2}>
+                {imagesOpt2.map(({ value: text }: any) => {
+                  return (
+                    <>
+                      <input
+                        type="radio"
+                        name="slide2"
+                        value={text}
+                        checked={text === radioState2}
+                        onChange={(e) => onRadioChange2(e)}
+                      />
+                    </>
+                  );
+                })}
+              </label>
+
+              {imagesOpt2.map(({ src: url, value: text }: any) => {
+                return (
+                  <>
+                    {radioState2 === text ? (
+                      <img className="slider-img" src={url} alt={text} />
+                    ) : (
+                      ""
+                    )}
+                  </>
+                );
+              })}
+            </section>
+          </Grid>
+        </Grid>
+      </>
     );
 }
 

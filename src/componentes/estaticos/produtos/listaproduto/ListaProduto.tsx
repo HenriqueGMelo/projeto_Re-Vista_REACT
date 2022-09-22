@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './ListaProduto.css';
-import { Card, CardActions, CardContent, CardActionArea, Box } from '@mui/material'
-import { Button,  Typography, CardMedia, Grid } from "@material-ui/core";
+import { Button, Typography, CardMedia, Grid } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
@@ -21,7 +20,7 @@ function ListaProduto() {
             navigate("/login")
         }
     }, [token])
-   
+
     async function getProduto() {
         await listar("/api/Produtos", setProdutos, {
             headers: {
@@ -32,49 +31,43 @@ function ListaProduto() {
     useEffect(() => {
         getProduto()
     }, [produtos.length])
-    
-    if (produtos.length <1) {
+
+    if (produtos.length < 1) {
         return (
             <>
-            <Typography variant='h1'>Nenhuma doação disponível </Typography>
+                <Typography variant='h1'>Nenhuma doação disponível </Typography>
             </>
         )
     }
     return (
-        <>        
+        <section id='lista_produtos'>
             {
                 produtos.map(produto => (
-                    <Grid className='grid'>  
-                        <Link to={`/produtos/${produto.id}`} className="box">
-                            <Card >
-                                <CardActionArea className='grid'>
-                                    <CardMedia
-                                        component="img"
-                                        height="250vh"
-                                        image={produto.urL_Imagem}
-                                        alt="Imagem do produto"
-                                    />
-                                    <CardContent >
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {produto.titulo}
-                                        </Typography>
-                                        <Box className='boxcard'>
-                                            <Typography variant="body2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum delectus eius optio voluptatum unde quis temporibus ad, animi debitis consequatur rem? Est nulla in, repellendus quae doloremque laboriosam sint eum.
-                                            </Typography>
-                                            <Typography variant="body2">
-                                                Qtd: {produto.qtdLimite}
-                                            </Typography>
-                                        </Box>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        
-                        </Link>                      
-                    </Grid>
-                ))   
+                    <article>
+                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                            <figure>
+                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                            </figure>
+                            <div>
+                                <header>
+
+                                    <h2>{produto.titulo}</h2>
+
+                                </header>
+                                <footer>
+                                    <p>
+                                        {produto.descricao}
+                                    </p>
+                                    <h3>
+                                        Qtd: {produto.qtdLimite}
+                                    </h3>
+                                </footer>
+                            </div>
+                        </Link>
+                    </article>
+                ))
             }
-        </>
+        </section>
     )
 
 

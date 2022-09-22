@@ -80,7 +80,7 @@ function Login() {
       alignItems="center"
       className="back3"
     >
-      <Grid xs={6} className="imagem "></Grid>
+      <Grid xs={6} className="imagem   "></Grid>
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={onSubmit}>

@@ -4,13 +4,16 @@ background-repeat: no-repeat;
 width: 100vh;
 min-height: 100vh;
 background-position: center;
-}
-.back3{background-color: rgba(255, 255, 255, 0.552);
-   
+margin-top: -60px;
 
 }
+.back3{background-color: rgba(255, 255, 255, 0.552);
+}
+
+
 .fundo4{
     background-color: white;
+    
 }
 
 .btn{
@@ -34,3 +37,12 @@ background-position: center;
     font-weight: bold !important;
 }
 
+.card1{
+    width: 10vw;
+    height: 20vw;
+    background-color: #ff604d;
+}
+
+.tamanho{
+    max-width: 100%;
+}
