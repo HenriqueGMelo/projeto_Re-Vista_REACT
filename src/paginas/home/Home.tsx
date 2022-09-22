@@ -13,7 +13,7 @@ function Home() {
     const imagesOpt = [
         { src: 'http://agencia.sorocaba.sp.gov.br/wp-content/uploads/2016/04/campanha-do-agasalho-creditosmp4snapshot012720160425162007.jpg', value: 'Agasalho' },
         { src: 'https://i.ytimg.com/vi/suYa1ce6BVY/maxresdefault.jpg', value: 'Maça' },
-        { src: 'https://th.bing.com/th/id/R.134a7c0aaa3fc31aa639931bfe754f7d?rik=A3PE941HZz547w&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fDwmIiGm.jpg&ehk=Qkj5R2csQ%2bKddCdzo4nI1DfxHXGj3reIIA%2bAjy%2fVMls%3d&risl=&pid=ImgRaw&r=0', value: 'Pera' },
+        { src: 'https://i.ytimg.com/vi/suYa1ce6BVY/maxresdefault.jpg', value: 'Pera' },
     ];
 
     const onRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {

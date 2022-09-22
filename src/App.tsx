@@ -15,8 +15,8 @@ import useLocalStorage from 'react-use-localstorage';
 
 
 function App() {
-  const [dataUser] = useLocalStorage('user')
-  const userLogado = JSON.parse(dataUser);
+  // const [dataUser] = useLocalStorage('user')
+  // const userLogado = JSON.parse(dataUser);
 
   return (
     <>
@@ -30,7 +30,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
               <Route path="/produtos" element={<ListaProduto />} />   
-              <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} />
+              {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
             </Routes>
