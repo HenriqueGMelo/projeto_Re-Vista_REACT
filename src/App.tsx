@@ -15,6 +15,7 @@ import DashboardDoador from './paginas/dashboard/Dashboard';
 import ShoppingCart from './paginas/ShoppingCart/ShoppingCart';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
+import { CartProvider } from './hooks/useCart';
 
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
 
   return (
     <>
-      <ToastContainer />
       <Router>
+      <ToastContainer />
+      <CartProvider>
         <Navbar />
           <div style={{ minHeight: '100vh'}}>
             <Routes>
@@ -40,6 +42,7 @@ function App() {
               <Route path='/cart' element={<ShoppingCart />} />
             </Routes>
           </div>
+          </CartProvider>
         <Footer />
       </Router>
     </>

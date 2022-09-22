@@ -3,25 +3,26 @@ import { toast } from 'react-toastify';
 // import Products from '../components/produtos/listaproduto/ListaProduto';
 import Produto from '../models/Produto';
 import { api } from '../services/Service';
+import useLocalStorage from 'react-use-localstorage';
 
 interface CartProviderProps {
     children: ReactNode;
 }
 
 interface UpdateProductAmount {
-    productId: number;
+    idProduto: number;
     amount: number;
 }
 
-export interface CartProduct extends Produto {
+export interface CartItem extends Produto {
     qtdProduto: number;
 }
 
 interface CartContextData {
-    cart: CartProduct[];
-    addProduct: (productId: number) => Promise<void>;
-    removeProduct: (productId: number) => void;
-    updateProductAmount: ({ productId, amount }: UpdateProductAmount) => void;
+    cart: CartItem[];
+    addProduct: (idProduto: number) => Promise<void>;
+    removeProduct: (idProduto: number) => void;
+    updateProductAmount: ({ idProduto, amount }: UpdateProductAmount) => void;
 }
 
 const cartStorageKey = "@revista:cart";
@@ -29,7 +30,7 @@ const cartStorageKey = "@revista:cart";
 const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
-    const [cart, setCart] = useState<CartProduct[]>(() => {
+    const [cart, setCart] = useState<CartItem[]>(() => {
         const storagedCart = localStorage.getItem(cartStorageKey)
 
         if (storagedCart) {
@@ -39,17 +40,17 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return [];
     });
 
-    const addProduct = async (id: number) => {
+    const addProduct = async (idProduto: number) => {
         try {
-            const productAlreadyInCart = cart.find(product => product.id === id)
+            const productAlreadyInCart = cart.find(produto => produto.id === idProduto)
 
             if (!productAlreadyInCart) {
-                const { data: product } = await api.get<Produto>(`/api/Produtos/id/${id}`);
+                const { data: produto } = await api.get<Produto>(`/api/Produtos/id/${idProduto}`);
 
-                if (product?.qtdProduto && product.qtdProduto > 0) {
-                    setCart([...cart, { ...product, qtdProduto: 1 }])
-                    localStorage.setItem(cartStorageKey, JSON.stringify([...cart, { ...product, productAmount: 1 }]))
-                    toast.success(product.titulo + ' adicionado ao carrinho', {
+                if (produto?.qtdProduto && produto.qtdProduto > 0) {
+                    setCart([...cart, { ...produto, qtdProduto: 1 }])
+                    localStorage.setItem(cartStorageKey, JSON.stringify([...cart, { ...produto, qtdProduto: 1 }]))
+                    toast.success(produto.titulo + ' adicionado ao carrinho', {
                     theme:"colored"
                     })
                     return;
@@ -57,12 +58,12 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             }
 
             if (productAlreadyInCart) {
-                const { data: product } = await api.get<Produto>(`/api/Produtos/id/${id}`);
+                const { data: produto } = await api.get<Produto>(`/api/Produtos/id/${idProduto}`);
 
-                if (product?.qtdProduto && (product.qtdProduto > productAlreadyInCart.qtdProduto)) {
-                    const updatedCart = cart.map(cartItem => cartItem.id === id ? {
+                if (produto?.qtdProduto && (produto.qtdProduto > productAlreadyInCart.qtdProduto)) {
+                    const updatedCart = cart.map(cartItem => cartItem.id === idProduto ? {
                         ...cartItem,
-                        productAmount: Number(cartItem.qtdProduto) + 1
+                        qtdProduto: Number(cartItem.qtdProduto) + 1
                     } : cartItem)
 
                     setCart(updatedCart)
@@ -77,15 +78,15 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         }
     };
 
-    const removeProduct = (productId: number) => {
+    const removeProduct = (idProduto: number) => {
         try {
-            const productExists = cart.some(cartProduct => cartProduct.id === productId)
+            const productExists = cart.some(cartProduct => cartProduct.id === idProduto)
             if (!productExists) {
                 toast.error('Erro na remoção do produto');
                 return
             }
 
-            const updatedCart = cart.filter(cartItem => cartItem.id !== productId)
+            const updatedCart = cart.filter(cartItem => cartItem.id !== idProduto)
             setCart(updatedCart)
             localStorage.setItem(cartStorageKey, JSON.stringify(updatedCart))
         } catch {
@@ -94,7 +95,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     };
 
     const updateProductAmount = async ({
-        productId,
+        idProduto,
         amount,
     }: UpdateProductAmount) => {
         try {
@@ -103,7 +104,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
                 return
             }
 
-            const response = await api.get<Produto>(`/api/Produtos/id/${productId}`);
+            const response = await api.get<Produto>(`/api/Produtos/id/${idProduto}`);
             const qtdProduto = response.data?.qtdProduto ?? 0;
             const stockIsFree = amount > qtdProduto
 
@@ -112,13 +113,13 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
                 return
             }
 
-            const productExists = cart.some(cartProduct => cartProduct.id === productId)
+            const productExists = cart.some(cartProduct => cartProduct.id === idProduto)
             if (!productExists) {
                 toast.error('Erro na alteração de quantidade do produto');
                 return
             }
 
-            const updatedCart = cart.map(cartItem => cartItem.id === productId ? {
+            const updatedCart = cart.map(cartItem => cartItem.id === idProduto ? {
                 ...cartItem,
                 qtdProduto: amount
             } : cartItem)
