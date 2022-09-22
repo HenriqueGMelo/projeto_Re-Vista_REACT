@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './ListaProdutos.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { Typography } from "@material-ui/core";
-import Produto from '../../../../models/Produto';
-import useLocalStorage from 'react-use-localstorage';
 import { busca, listar } from '../../../../services/Service';
-import User from '../../../../models/User';
-import Pedido from '../../../../models/Pedidos';
+import Pedidos from '../../../../models/Pedidos';
 
 function ListaProdutos(prop: any) {
-    const [produtos, setProdutos] = useState<Pedido[]>([]);
+    const [produtos, setProdutos] = useState<Pedidos[]>([]);
 
     async function getProdutos() {
         await busca('/api/Produto/', setProdutos, {

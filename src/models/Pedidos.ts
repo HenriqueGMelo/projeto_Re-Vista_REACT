@@ -1,10 +1,14 @@
-interface Pedido {
-    id: number,
-    titulo: string,
-    descricao: string,
-    qtdProduto: number,
-    urL_Imagem: string,
+import User from "./User";
+
+interface Pedidos{
+    id: number;
+    titulo: string; 
+    descricao: string;
+    qtdProduto: string;
+    qtdLimite: string;
+    urL_Imagem: string;
+    criador: User;
     tipo: string
 }
 
-export default Pedido;
+export default Pedidos;

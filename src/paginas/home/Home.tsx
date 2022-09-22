@@ -128,11 +128,12 @@ function Home() {
             <Box className="fazemos">
               <Box className="fazemosbox">
                 <p>
-                  Trabalhamos com uma visão e propósito que visa atendermos e
-                  contribuirmos com a ODS da ONU de número 12 - “Consumo e
-                  Produção Sustentáveis”. De forma a implementarmos está ODS na
-                  área Têxtil, onde temos como foco o reaproveitamento de roupas
-                  em bom estado que possam ser doadas para pessoas que precisam.
+                Trabalhamos com uma visão e propósito que visa atendermos e contribuirmos 
+                com a ODS da ONU de número 12 - “Consumo e Produção Sustentáveis”. <br></br><br></br>
+                Buscamos implementar está ODS na área têxtil, onde temos como foco
+                o reaproveitamento de roupas em bom estado de maneira que assim possam
+                ser entregues a ONG`s parceiras que por sua vez as entregam para
+                as pessoas que estão necessitando.
                 </p>
                 <img
                   src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
@@ -145,26 +146,25 @@ function Home() {
                   alt=""
                 />
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Blanditiis et sapiente odit, eius voluptatibus odio
-                  repudiandae. Officia totam tenetur, illum velit molestias
-                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
-                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-                  autem, quidem fugit repudiandae officiis culpa quas est
-                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
-                  mollitia vitae recusandae soluta.
+                Somos um E-Commerce voltado para a área de doações de roupas, onde através
+                 de nosso website fazemos a intermediação entre Doadores e ONG´s. <br></br><br></br>
+                Através da [Re]vista tornamos as ações dos usuários “Doador e ONG” 
+                fáceis de serem realizadas de maneira segura e prática para ambos. <br></br><br></br>
+                Além da maneira prática para os usuários utilizarem nosso E-Commerce, 
+                também contribuímos para diferentes vertentes, não somente a causa de
+                consumo e produção sustentáveis   
+
                 </p>
               </Box>
               <Box className="fazemosbox">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Blanditiis et sapiente odit, eius voluptatibus odio
-                  repudiandae. Officia totam tenetur, illum velit molestias
-                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
-                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-                  autem, quidem fugit repudiandae officiis culpa quas est
-                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
-                  mollitia vitae recusandae soluta.
+                Com este projeto conseguimos estimular e propagar o consumo responsável
+                e sustentável de roupas, visando contribuir em diversas vertentes que
+                por fim se unem como um todo, sendo: as pessoas que recebem cada doação,
+                sociedade e meio ambiente. <br></br><br></br>
+                De forma simples todos podem ajudar nesta causa de suma importância,
+                doar gera grande impacto positivo para todos
+
                 </p>
                 <img
                   src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
