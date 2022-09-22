@@ -56,7 +56,7 @@ function Login() {
 
   useEffect(() => {
     if (token != '') {
-      history("/home")
+      history("/dashboard")
     }
   }, [token])
 
