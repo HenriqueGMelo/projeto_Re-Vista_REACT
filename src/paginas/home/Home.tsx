@@ -4,6 +4,7 @@ import { Box, Card, CardContent, CardMedia, CardActionArea } from '@mui/material
 //importando gri e paper (background) do material ui
 import './Home.css';
 
+
 function Home() {
 
     const [radioState, setRadioState] = useState('Agasalho');
@@ -11,7 +12,7 @@ function Home() {
 
     const imagesOpt = [
         { src: 'http://agencia.sorocaba.sp.gov.br/wp-content/uploads/2016/04/campanha-do-agasalho-creditosmp4snapshot012720160425162007.jpg', value: 'Agasalho' },
-        { src: 'https://th.bing.com/th/id/R.2669bfe873c1bf8496f79e31449fb4d1?rik=jj8WPLzFOC6HuA&pid=ImgRaw&r=0', value: 'Maça' },
+        { src: 'https://i.ytimg.com/vi/suYa1ce6BVY/maxresdefault.jpg', value: 'Maça' },
         { src: 'https://th.bing.com/th/id/R.134a7c0aaa3fc31aa639931bfe754f7d?rik=A3PE941HZz547w&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fDwmIiGm.jpg&ehk=Qkj5R2csQ%2bKddCdzo4nI1DfxHXGj3reIIA%2bAjy%2fVMls%3d&risl=&pid=ImgRaw&r=0', value: 'Pera' },
     ];
 
@@ -35,8 +36,8 @@ function Home() {
     const [count1, setCount1] = useState(0);
 
     const imagesOpt1 = [
-        { src: 'https://i.pinimg.com/originals/11/1a/03/111a03133d14214539c96e0f657dff1a.png', value: 'Agasalho' },
-        { src: 'https://th.bing.com/th/id/R.2669bfe873c1bf8496f79e31449fb4d1?rik=jj8WPLzFOC6HuA&pid=ImgRaw&r=0', value: 'Maça' },
+        { src: 'https://i.ytimg.com/vi/suYa1ce6BVY/maxresdefault.jpg', value: 'Agasalho' },
+        { src: 'https://agencia.sorocaba.sp.gov.br/wp-content/uploads/2016/04/campanha-do-agasalho-creditosmp4snapshot012720160425162007.jpg', value: 'Maça' },
         { src: 'https://th.bing.com/th/id/R.134a7c0aaa3fc31aa639931bfe754f7d?rik=A3PE941HZz547w&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fDwmIiGm.jpg&ehk=Qkj5R2csQ%2bKddCdzo4nI1DfxHXGj3reIIA%2bAjy%2fVMls%3d&risl=&pid=ImgRaw&r=0', value: 'Pera' },
         { src: 'https://th.bing.com/th/id/R.121432b1dffbfb4f06bb1f6f8c56b580?rik=xMjCgitnCWyPoQ&pid=ImgRaw&r=0', value: 'Kiwi' },
     ];
@@ -61,9 +62,9 @@ function Home() {
     const [count2, setCount2] = useState(0);
 
     const imagesOpt2 = [
-        { src: 'http://agencia.sorocaba.sp.gov.br/wp-content/uploads/2016/04/campanha-do-agasalho-creditosmp4snapshot012720160425162007.jpg', value: 'Agasalho' },
-        { src: 'https://th.bing.com/th/id/R.2669bfe873c1bf8496f79e31449fb4d1?rik=jj8WPLzFOC6HuA&pid=ImgRaw&r=0', value: 'Maça' },
-        { src: 'https://th.bing.com/th/id/R.134a7c0aaa3fc31aa639931bfe754f7d?rik=A3PE941HZz547w&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fDwmIiGm.jpg&ehk=Qkj5R2csQ%2bKddCdzo4nI1DfxHXGj3reIIA%2bAjy%2fVMls%3d&risl=&pid=ImgRaw&r=0', value: 'Pera' },
+        { src: 'https://i.ytimg.com/vi/suYa1ce6BVY/maxresdefault.jpg', value: 'Agasalho' },
+        { src: 'https://agencia.sorocaba.sp.gov.br/wp-content/uploads/2016/04/campanha-do-agasalho-creditosmp4snapshot012720160425162007.jpg', value: 'Maça' },
+        { src: 'https://thumbs.dreamstime.com/b/volunt%C3%A1rios-doando-roupas-pessoas-sem-teto-e-pobres-ilustra%C3%A7%C3%A3o-plana-de-vetor-caridade-volunt%C3%A1ria-ajuda-abrigo-para-plano-213938965.jpg', value: 'Pera' },
         { src: 'https://th.bing.com/th/id/R.121432b1dffbfb4f06bb1f6f8c56b580?rik=xMjCgitnCWyPoQ&pid=ImgRaw&r=0', value: 'Kiwi' },
     ];
 
@@ -127,11 +128,12 @@ function Home() {
             <Box className="fazemos">
               <Box className="fazemosbox">
                 <p>
-                  Trabalhamos com uma visão e propósito que visa atendermos e
-                  contribuirmos com a ODS da ONU de número 12 - “Consumo e
-                  Produção Sustentáveis”. De forma a implementarmos está ODS na
-                  área Têxtil, onde temos como foco o reaproveitamento de roupas
-                  em bom estado que possam ser doadas para pessoas que precisam.
+                Trabalhamos com uma visão e propósito que visa atendermos e contribuirmos 
+                com a ODS da ONU de número 12 - “Consumo e Produção Sustentáveis”. <br></br><br></br>
+                Buscamos implementar está ODS na área têxtil, onde temos como foco
+                o reaproveitamento de roupas em bom estado de maneira que assim possam
+                ser entregues a ONG`s parceiras que por sua vez as entregam para
+                as pessoas que estão necessitando.
                 </p>
                 <img
                   src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
@@ -144,26 +146,25 @@ function Home() {
                   alt=""
                 />
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Blanditiis et sapiente odit, eius voluptatibus odio
-                  repudiandae. Officia totam tenetur, illum velit molestias
-                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
-                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-                  autem, quidem fugit repudiandae officiis culpa quas est
-                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
-                  mollitia vitae recusandae soluta.
+                Somos um E-Commerce voltado para a área de doações de roupas, onde através
+                 de nosso website fazemos a intermediação entre Doadores e ONG´s. <br></br><br></br>
+                Através da [Re]vista tornamos as ações dos usuários “Doador e ONG” 
+                fáceis de serem realizadas de maneira segura e prática para ambos. <br></br><br></br>
+                Além da maneira prática para os usuários utilizarem nosso E-Commerce, 
+                também contribuímos para diferentes vertentes, não somente a causa de
+                consumo e produção sustentáveis   
+
                 </p>
               </Box>
               <Box className="fazemosbox">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Blanditiis et sapiente odit, eius voluptatibus odio
-                  repudiandae. Officia totam tenetur, illum velit molestias
-                  error, modi, enim quibusdam quod maiores dicta eligendi. Lorem
-                  ipsum, dolor sit amet consectetur adipisicing elit. Maiores
-                  autem, quidem fugit repudiandae officiis culpa quas est
-                  deleniti tenetur. Unde deserunt at, libero qui fuga deleniti
-                  mollitia vitae recusandae soluta.
+                Com este projeto conseguimos estimular e propagar o consumo responsável
+                e sustentável de roupas, visando contribuir em diversas vertentes que
+                por fim se unem como um todo, sendo: as pessoas que recebem cada doação,
+                sociedade e meio ambiente. <br></br><br></br>
+                De forma simples todos podem ajudar nesta causa de suma importância,
+                doar gera grande impacto positivo para todos
+
                 </p>
                 <img
                   src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
@@ -255,7 +256,7 @@ function Home() {
             <Typography className="h1" variant="h2">
               Como posso participar?
             </Typography>
-            <Box className="box-btn">
+            <Box className="box-btn"> 
               <Button className="bt-doador">Quero ser um doador</Button>
               <Button className="bt-ong">Quero receber doações</Button>
             </Box>
