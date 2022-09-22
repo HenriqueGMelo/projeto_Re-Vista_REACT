@@ -19,10 +19,7 @@ function App() {
   // const [dataUser] = useLocalStorage('user')
   // const userLogado = JSON.parse(dataUser);
 
-  
-//   useEffect(() => {
-//     document.title = "[Re]Vista";
-// }, [])
+
 
   return (
     <>
@@ -35,7 +32,7 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />  
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
-              <Route path="/produtos" element={<ListaProduto />} />   
+              <Route path="/produtos" element={<ListaProduto />} />  
               {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
