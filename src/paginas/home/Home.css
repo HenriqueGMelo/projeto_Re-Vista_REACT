@@ -150,3 +150,7 @@
     background-color: rgba(255, 255, 255, 0.697);
     opacity: 80%;
 }
+
+.text-decoration-car {
+    text-decoration: none !important;
+}
