@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from 'react';
-import { Drawer, Button, Divider, Badge, IconButton, Typography } from '@material-ui/core';
+import React from 'react';
+import { Drawer, Button, Divider } from '@material-ui/core';
 import { CartItem, useCart } from '../../hooks/useCart';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -60,7 +60,6 @@ export default function SideCart() {
             })
         }
     }
-
 
     const [state, setState] = React.useState({
         right: false,
