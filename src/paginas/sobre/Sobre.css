@@ -2,12 +2,11 @@
     background-image: url(../../assets/background.png);
   }
 
-.carousel1 {
+.sobre {
     width: 100vw;
     height: 80vh;
     background-image: url(../../assets/Sobre.png);
     background-repeat: no-repeat;
-
 }
 
 .sobre1{
