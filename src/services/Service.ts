@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://revista-ecommerce.herokuapp.com'
+    baseURL: 'http://localhost:5000'
 })
 
 export const login = async(url: any, dados: any, setToken: any, setDataUser: any) => {
