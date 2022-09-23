@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Home   from './paginas/home/Home';
@@ -11,16 +11,22 @@ import ListaProduto from './componentes/estaticos/produtos/listaproduto/ListaPro
 import ListaProdutosDoador from './componentes/estaticos/produtos/listaproduto/ListaProdutosDoador';
 import CadastroDoacao from './paginas/cadastrodoacao/CadastroDoacao';
 import DashboardDoador from './paginas/dashboard/Dashboard';
-import useLocalStorage from 'react-use-localstorage';
+// import useLocalStorage from 'react-use-localstorage';
+import ShoppingCart from './paginas/ShoppingCart/ShoppingCart';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
+import { CartProvider } from './hooks/useCart';
 
 
 function App() {
-  const [dataUser] = useLocalStorage('user')
-  const userLogado = JSON.parse(dataUser);
+  // const [dataUser] = useLocalStorage('user')
+  // const userLogado = JSON.parse(dataUser);
 
   return (
     <>
       <Router>
+      <ToastContainer />
+      <CartProvider>
         <Navbar />
           <div style={{ minHeight: '100vh'}}>
             <Routes>
@@ -29,12 +35,16 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />  
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+
               <Route path="/produtos" element={<ListaProduto />} />   
-              <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} />
+
+              {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
+              <Route path='/cart' element={<ShoppingCart />} />
             </Routes>
           </div>
+          </CartProvider>
         <Footer />
       </Router>
     </>

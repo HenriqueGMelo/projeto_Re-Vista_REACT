@@ -5,7 +5,10 @@ import Grid from "@mui/material/Grid";
 import { Link, useNavigate } from "react-router-dom";
 import logo3 from "./logo3.png";
 import "./Navbar.css";
+import SideCart from '../../sideCart/SideCart';
 import useLocalStorage from "react-use-localstorage";
+import { toast } from 'react-toastify';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 function Navbar() {
   const [token, setToken] = useLocalStorage('token');
@@ -13,7 +16,16 @@ function Navbar() {
 
   function goLogout() {
     setToken('')
-    alert("Usuário deslogado!")
+    toast.info('Usuário deslogado', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      theme: "colored",
+      progress: undefined,
+  });
     navigate('/home')
 }
 
@@ -21,6 +33,10 @@ function Navbar() {
     <>
       <AppBar position="fixed" className="opa">
         <Toolbar className="fundo3" variant="dense">
+
+        {
+            token === ''
+              ?
           <Grid item xs={6} mx={1} className="caixa1">
             <Link to="/home" className="text-decorator-none">
               <Box marginX={3} className="texto2">
@@ -36,14 +52,25 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/cadastrodoacao" className="text-decorator-none">
+          </Grid>
+          :
+          <Grid item xs={6} mx={1} className="caixa1">
+            <Link to="/dashboard" className="text-decorator-none">
+              <Box marginX={3} className="texto2">
+                <Typography variant="h6" className="cursor">
+                  Home
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/sobre" className="text-decorator-none">
               <Box marginX={3}>
                 <Typography variant="h6" className="cursor">
-                  Doação
+                  Sobre
                 </Typography>
               </Box>
             </Link>
           </Grid>
+        }
 
           <Grid item xs={1}>
             <Link to="/home" className="text-decorator-none">
@@ -52,6 +79,7 @@ function Navbar() {
             </Box>
             </Link>
           </Grid>
+          
 
           {
             token === ''
@@ -71,6 +99,7 @@ function Navbar() {
                     </Typography>
                   </Box>
                 </Link>
+                <SideCart />
               </Grid>
               :
               <Grid item xs={6} className="caixa1">
@@ -81,15 +110,17 @@ function Navbar() {
                     </Typography>
                   </Box>
                 </Link>
-                
                   <Box marginX={3}>
                     <Typography variant="h6" className="cursor" onClick={goLogout}>
                       Logout
                     </Typography>
                   </Box>
-                
+                  <Box>
+                    <SideCart />
+                  </Box>
               </Grid>
           }
+          
         </Toolbar>
       </AppBar>
     </>

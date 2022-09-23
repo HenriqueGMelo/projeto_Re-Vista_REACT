@@ -22,10 +22,14 @@
     "axios": "^0.27.2",
     "react": "^17",
     "react-dom": "^17",
+<<<<<<< HEAD
     "react-multi-carousel": "^2.8.2",
+=======
+>>>>>>> 183711d082cddfd034b4642709b1c78225830f6d
     "react-redux": "^8.0.2",
     "react-router-dom": "6",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.8",
     "react-use-localstorage": "^3.5.3",
     "swiper": "^8.4.2",
     "typescript": "^4.8.2",

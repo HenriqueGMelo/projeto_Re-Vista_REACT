@@ -8,6 +8,7 @@ import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service"
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
+import { toast } from 'react-toastify';
 
 // Crie seu próprio tema:
 const theme = createTheme({
@@ -53,24 +54,44 @@ function Login() {
     })
   }
 
-  useEffect(() => {
-    if (token != '') {
-      history("/home")
-    }
-  }, [token])
-
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
     try {
       await login(`/api/Usuarios/logar`, userLogin, setToken, setDataUser)
 
-      alert("Usuário logado com sucesso!")
+      toast.success('Usuário logado com sucesso!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+        });
     }
     catch (error) {
-      alert("Dados dos usuário inconsistentes. Erro ao logar!")
+      toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+        });
     }
   }
+
+  /// Arrumado para funcionar o dashboard, mas tem que ver isso com o Boaz, do poque não redirecionar para a dashboard quando o storage esta vazio.
+
+  useEffect(() => {
+    if (token != '') {
+      history("/home")
+    }
+  }, [token, history])
 
   return (
     <Grid

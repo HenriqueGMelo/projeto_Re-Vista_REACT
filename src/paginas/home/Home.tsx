@@ -158,8 +158,14 @@ function Home() {
               Como posso participar?
             </Typography>
             <Box className="box-btn"> 
+            <a href="#car-doador">
+
               <Button className="bt-doador">Quero ser um doador</Button>
+            </a>
+            <a href="#car-ong">
               <Button className="bt-ong">Quero receber doações</Button>
+
+            </a>
             </Box>
           </Grid>
           <Grid xs={6}>
