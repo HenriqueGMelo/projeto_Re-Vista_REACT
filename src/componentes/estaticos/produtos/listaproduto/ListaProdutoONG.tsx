@@ -2,66 +2,66 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
-import { listar } from '../../../../services/Service';
+import { acaoserv, listar } from '../../../../services/Service';
 import User from '../../../../models/User';
+import Acao from '../../../../models/Acao';
 
 
-function ListaProdutosDoador() {
+function ListaProdutosONG() {
     const [produtos, setProdutos] = useState<Produto[]>([])
     const [token, setToken] = useLocalStorage('token')
     const [dataUser] = useLocalStorage('user')
     const userLogado = JSON.parse(dataUser);
     const [user, setUser] = useState<User[]>([])
+    const [acoes, setAcoes] = useState<Acao[]>([])
     let navigate = useNavigate();
 
     useEffect(() => {
         if (token == '') {
-            alert("Conecte-se novamente para verificar doações disponíveis")
+            alert("Conecte-se novamente para verificar seu histórico de doações")
             navigate("/login")
         }
     }, [token])
 
-    // usar outra lógica para buscar o id? ***********************
-
-    async function getProduto() {
-        await listar(/api/Acao, setProdutos, {
+    async function getAcao() {
+        await acaoserv("/api/Acao", setAcoes, {
             headers: {
                 'Authorization': token
             }
         })
     }
     useEffect(() => {
-        getProduto()
-    }, [produtos.length])
+        getAcao()
+    }, [acoes.length])
 
-    if (produtos.length < 1) {
+    if (acoes.length < 1) {
         return (
             <>
-                <h1>Nenhuma doação disponível </h1>
+                <h1>Nenhuma doação recebida </h1>
             </>
         )
     }
     return (
         <section id='lista_produtos'>
             {
-                produtos.map(produto => (
+                acoes.map(acao => (
                     <article>
-                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                        <Link to={`/produtos/${acao.produto}`} className='decorator' >
                             <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                                <img src={acao.urL_Imagem} alt="Imagem do produto" />
                             </figure>
                             <div>
                                 <header>
 
-                                    <h2>{produto.titulo}</h2>
+                                    <h2>{acao.titulo}</h2>
 
                                 </header>
                                 <footer>
                                     <p>
-                                        {produto.descricao}
+                                        {acao.descricao}
                                     </p>
                                     <h3>
-                                        Qtd: {produto.qtdLimite}
+                                        Qtd: {acao}
                                     </h3>
                                 </footer>
                             </div>
@@ -76,4 +76,4 @@ function ListaProdutosDoador() {
 
 }
 
-export default ListaProdutosDoador;
+export default ListaProdutosONG;
