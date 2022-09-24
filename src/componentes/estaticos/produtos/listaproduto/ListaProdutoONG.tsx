@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Box } from '@mui/material'
-import { Button, Card, CardActions, CardContent, CardActionArea, CardMedia, Typography, Grid } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
@@ -23,10 +21,10 @@ function ListaProdutosDoador() {
         }
     }, [token])
 
-// usar outra lógica para buscar o id? ***********************
+    // usar outra lógica para buscar o id? ***********************
 
     async function getProduto() {
-        await listar(`/api/Produtos/id/empresas/${userLogado.id}`, setProdutos, {
+        await listar(/api/Acao, setProdutos, {
             headers: {
                 'Authorization': token
             }
@@ -35,49 +33,43 @@ function ListaProdutosDoador() {
     useEffect(() => {
         getProduto()
     }, [produtos.length])
-    
-    if (produtos.length <1) {
+
+    if (produtos.length < 1) {
         return (
             <>
-            <Typography variant='h1'>Nenhuma doação disponível </Typography>
+                <h1>Nenhuma doação disponível </h1>
             </>
         )
     }
     return (
-        <>
+        <section id='lista_produtos'>
             {
                 produtos.map(produto => (
-                    <Grid className='grid'>  
-                        <Link to={`/produtos/${produto.id}`} className="box">
-                            <Card >
-                                <CardActionArea className='grid'>
-                                    <CardMedia
-                                        component="img"
-                                        height="250vh"
-                                        image={produto.urL_Imagem}
-                                        alt="Imagem do produto"
-                                    />
-                                    <CardContent >
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            {produto.titulo}
-                                        </Typography>
-                                        <Box className='boxcard'>
-                                            <Typography variant="body2">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum delectus eius optio voluptatum unde quis temporibus ad, animi debitis consequatur rem? Est nulla in, repellendus quae doloremque laboriosam sint eum.
-                                            </Typography>
-                                            <Typography variant="body2">
-                                                Qtd: {produto.qtdLimite}
-                                            </Typography>
-                                        </Box>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        
-                        </Link>                      
-                    </Grid>
-                ))   
+                    <article>
+                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                            <figure>
+                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                            </figure>
+                            <div>
+                                <header>
+
+                                    <h2>{produto.titulo}</h2>
+
+                                </header>
+                                <footer>
+                                    <p>
+                                        {produto.descricao}
+                                    </p>
+                                    <h3>
+                                        Qtd: {produto.qtdLimite}
+                                    </h3>
+                                </footer>
+                            </div>
+                        </Link>
+                    </article>
+                ))
             }
-        </>
+        </section>
     )
 
 
