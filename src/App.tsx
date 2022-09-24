@@ -35,7 +35,6 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />  
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
-
               <Route path="/produtos" element={<ListaProduto />} />   
 
               {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}

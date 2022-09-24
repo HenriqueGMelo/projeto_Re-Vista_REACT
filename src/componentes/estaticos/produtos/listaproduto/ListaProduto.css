@@ -8,15 +8,12 @@ h2, h3, p {
 }
 
 #lista_produtos {
-    margin-top: 70px;
+    margin-top: 120px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-
-
     width: 100%;
-
 }
 
 
@@ -27,7 +24,7 @@ h2, h3, p {
     flex-direction: column;
 
 
-    margin: 10px;
+    margin: 5px;
 
     background-color: rgb(248, 247, 247);
 
@@ -41,7 +38,6 @@ h2, h3, p {
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
 #lista_produtos article figure img {
@@ -50,14 +46,11 @@ h2, h3, p {
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
 }
 
 #lista_produtos article div {
     width: 100%;
     height: 210px;
-
-
 }
 
 #lista_produtos article div header {
@@ -99,3 +92,85 @@ h2, h3, p {
     align-items: flex-end;
 
 }
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top h2 {
+    position: absolute;
+    font-size: 40px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    color: #ff604d;
+    padding: 6px;
+    border: #36607a double 10px;
+    text-transform: uppercase;
+    margin-top: 120px;
+}
+
+.alinhamento{
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.section2 {
+    background-color: #ECE7B4;
+    border-radius: 10px;
+}
+
+.card-content{
+    box-shadow: #36607a 5px 5px 10px;
+}
+
+.cardprodutos{
+    width: 300px;
+    border-radius: 10px;
+}
+
+.imagemProdutos{
+    width: 100%;
+    height: 300px;
+}
+
+.nomeProdutos{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway' !important;
+    font-size: 25px !important;
+}
+
+.qtdProdutos{
+    display: flex;
+    justify-content: center !important;
+    font-size: 20px !important;
+    margin-top: 3px;
+}
+
+.fonteProdutos{
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+
+.text-decorator-none{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-produtos{
+    background-color: #FFFFFF !important;
+    color: #ff604d !important;
+    font-family: 'Raleway' !important;
+    font-weight: bold !important;
+    margin-top: 7px !important;
+}
+
