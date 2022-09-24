@@ -20,9 +20,9 @@ import "swiper/css/scrollbar";
 import "./Carousel2.css";
 
 //imagens
-import tutorial1 from "../../../assets/tutorial1.png";
-import tutorial2 from "../../../assets/tutorial2.png";
-import tutorial3 from "../../../assets/tutorial3.png";
+import tutorial4 from "../../../assets/tutorial4.png";
+import tutorial5 from "../../../assets/tutorial5.png";
+import tutorial6 from "../../../assets/tutorial6.png";
 
 function Carousel1() {
   return (
@@ -41,13 +41,13 @@ function Carousel1() {
       className="mySwiper"
     >
       <SwiperSlide>
-        <img src={tutorial1} alt="" />
+        <img src={tutorial4} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={tutorial2} alt="" />
+        <img src={tutorial5} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src={tutorial3} alt="" />
+        <img src={tutorial6} alt="" />
       </SwiperSlide>
     </Swiper>
   );

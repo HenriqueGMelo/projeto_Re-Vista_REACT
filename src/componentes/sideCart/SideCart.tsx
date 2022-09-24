@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from 'react';
-import { Drawer, Button, Divider, Badge, IconButton, Typography } from '@material-ui/core';
+import React from 'react';
+import { Drawer, Button, Divider } from '@material-ui/core';
 import { CartItem, useCart } from '../../hooks/useCart';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -8,6 +8,7 @@ import "./SideCart.css";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import sacola from './sacola.png'
 
 type Anchor = 'right';
 
@@ -59,7 +60,6 @@ export default function SideCart() {
             })
         }
     }
-
 
     const [state, setState] = React.useState({
         right: false,
@@ -132,18 +132,23 @@ export default function SideCart() {
     );
 
     return (
-        /* BOTÃO DO CARRINHO */
-        /* BOTÃO DO CARRINHO */
-        <div>
-            {(['right'] as Anchor[]).map((anchor) => (
-                <React.Fragment key={anchor}>
-                    <Button onClick={toggleDrawer(anchor, true)}>
-                    </Button>
-                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                        {list(anchor)}
-                    </Drawer>
-                </React.Fragment>
-            ))}
-        </div>
+      /* BOTÃO DO CARRINHO */
+      /* BOTÃO DO CARRINHO */
+      <div>
+        {(["right"] as Anchor[]).map((anchor) => (
+          <React.Fragment key={anchor}>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              <img src={sacola} alt="oi" />
+            </Button>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
+        ))}
+      </div>
     );
 }
