@@ -17,6 +17,7 @@ import ShoppingCart from './paginas/ShoppingCart/ShoppingCart';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import { CartProvider } from './hooks/useCart';
+import MinhaConta from './paginas/minhapagina/minhaConta';
 
 
 function App() {
@@ -37,13 +38,12 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
               <Route path="/produtos" element={<ListaProduto />} />
-
               {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
               <Route path='/cart' element={<ShoppingCart />} />
               <Route path='/produtos-ong' element={<ListaProdutosONG />} />
-
+              <Route path="/minhaconta" element={<MinhaConta />} />
 
             </Routes>
           </div>
