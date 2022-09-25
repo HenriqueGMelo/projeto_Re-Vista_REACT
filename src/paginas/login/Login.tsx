@@ -54,6 +54,15 @@ function Login() {
     })
   }
 
+   /// Arrumado para funcionar o dashboard, mas tem que ver isso com o Boaz, do poque não redirecionar para a dashboard quando o storage esta vazio.
+
+   useEffect(() => {
+    if (token != '') {
+      history("/home")
+    }
+  }, [token, history])
+
+
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -84,14 +93,6 @@ function Login() {
         });
     }
   }
-
-  /// Arrumado para funcionar o dashboard, mas tem que ver isso com o Boaz, do poque não redirecionar para a dashboard quando o storage esta vazio.
-
-  useEffect(() => {
-    if (token != '') {
-      history("/home")
-    }
-  }, [token, history])
 
   return (
     <Grid
