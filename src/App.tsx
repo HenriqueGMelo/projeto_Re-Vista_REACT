@@ -38,7 +38,7 @@ function App() {
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
               <Route path="/produtos" element={<ListaProduto />} />
-              {/* <Route path={`/produtos/id/empresas/${userLogado.id}`} element={<ListaProdutosDoador />} /> */}
+              <Route path="/produtos/id/empresas/:id" element={<ListaProdutosDoador />} />
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
               <Route path='/cart' element={<ShoppingCart />} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Typography } from "@material-ui/core";
 import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
@@ -8,8 +8,9 @@ import User from '../../../../models/User';
 
 
 function ListaProdutosDoador() {
+    const { id } = useParams<{id: string}>();
     const [produtos, setProdutos] = useState<Produto[]>([])
-    const [token, setToken] = useLocalStorage('token')
+    const [token] = useLocalStorage('token')
     const [dataUser] = useLocalStorage('user')
     const userLogado = JSON.parse(dataUser);
     const [user, setUser] = useState<User[]>([])
@@ -23,7 +24,7 @@ function ListaProdutosDoador() {
     }, [token])
 
     async function getProduto() {
-        await listar(`/api/Produtos/id/empresas/${userLogado.id}`, setProdutos, {
+        await listar(`/api/Produtos/id/empresas/${id}`, setProdutos, {
             headers: {
                 'Authorization': token
             }
