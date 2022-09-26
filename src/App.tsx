@@ -18,6 +18,7 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import { CartProvider } from './hooks/useCart';
 import MinhaConta from './paginas/minhapagina/minhaConta';
+import VitrineProduto from './componentes/estaticos/produtos/pedidoproduto/VitrineProduto';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
               <Route path='/cart' element={<ShoppingCart />} />
               <Route path='/produtos-ong' element={<ListaProdutosONG />} />
               <Route path="/minhaconta" element={<MinhaConta />} />
+              <Route path="/vitrine/:id" element={<VitrineProduto />} />
 
             </Routes>
           </div>
