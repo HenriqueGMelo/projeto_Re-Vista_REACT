@@ -88,7 +88,6 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              <SideCart />
               <Link to="/login" className="text-decorator-none">
                 <Box marginX={3} marginTop={1}>
                   <Typography variant="h6" className="cursor">

@@ -23,6 +23,8 @@ import "./Carousel1.css";
 import tutorial1 from "../../../assets/tutorial1.png";
 import tutorial2 from "../../../assets/tutorial2.png";
 import tutorial3 from "../../../assets/tutorial3.png";
+import tutorial7 from "../../../assets/tutorial7.png";
+import tutorial8 from "../../../assets/tutorial8.png";
 
 function Carousel1() {
   return (
@@ -44,7 +46,13 @@ function Carousel1() {
         <img src={tutorial1} alt="" />
       </SwiperSlide>
       <SwiperSlide>
+        <img src={tutorial7} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
         <img src={tutorial2} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img src={tutorial8} alt="" />
       </SwiperSlide>
       <SwiperSlide>
         <img src={tutorial3} alt="" />
