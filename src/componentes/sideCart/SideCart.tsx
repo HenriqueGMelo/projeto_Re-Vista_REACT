@@ -55,7 +55,7 @@ export default function SideCart() {
         }
         else {
 
-            toast.success('Compra Realizada com Sucesso!!', {
+            toast.success('Pedido Realizado com Sucesso!!', {
                 theme: "colored"
             })
         }
@@ -121,7 +121,7 @@ export default function SideCart() {
                 <Divider />
             </div>
              <div className='btFinish1'><button className='btn2' type='submit' value='submit' onClick={handleClick}>
-                Finalizar Compra
+                Finalizar Pedido
             </button>
             </div>
             
