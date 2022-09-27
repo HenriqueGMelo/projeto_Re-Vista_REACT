@@ -59,34 +59,34 @@ function ListaProduto() {
                 {
                     produtos.map(produto => (
                         <article className="section2 cardprodutos card-content">
+                           
+                                <figure>
+                                    <img src={produto.urL_Imagem} alt="Imagem do produto" className="imagemProdutos" />
+                                </figure>
+                                <div>
+                                    <header>
 
-                            <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" className="imagemProdutos" />
-                            </figure>
-                            <div>
-                                <header>
+                                        <h2 className='nomeProdutos'>{produto.titulo}</h2>
 
-                                    <h2 className='nomeProdutos'>{produto.titulo}</h2>
+                                    </header>
+                                    <footer>
 
-                                </header>
-                                <footer>
-
-                                    <p className='fonteProdutos'>
-                                        {produto.descricao}
-                                    </p>
-
-                                    <h3 className='qtdProdutos'>
-                                        Qtd: {produto.qtdLimite}
-                                    </h3>
-                                    <Box display="flex" justifyContent="center" mb={1.5}>
-                                        <Box mx={1}>
-                                            <Button variant='contained' className="btn-produtos" onClick={() => handleAddCart(produto.id)} >
-                                                Adicionar ao carrinho
-                                            </Button>
-                                        </Box>
+                                        <p  className='fonteProdutos'>
+                                            {produto.descricao}
+                                        </p>
+                                        
+                                        <h3 className='qtdProdutos'>
+                                            Qtd: {produto.qtdLimite}
+                                        </h3>
+                                        <Box display="flex" justifyContent="center" mb={1.5}>  
+                                            <Box mx={1}>
+                                                <Button variant='contained' className="btn-produtos" onClick={() => handleAddCart(produto.id)} >
+                                                    Adicionar ao carrinho
+                                                </Button>
+                                            </Box>
                                     </Box>
-                                </footer>
-                            </div>
+                                    </footer>
+                                </div>
                         </article>
                     ))
                 }
