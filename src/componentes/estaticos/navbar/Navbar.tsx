@@ -33,10 +33,10 @@ function Navbar() {
 
   return (
     <>
-      <AppBar position="fixed" className="opa">
-        <Toolbar className="fundo3" variant="dense">
+      <AppBar position="fixed" className="opa noBarra">
+        <Toolbar className="fundo3 noBarra " variant="dense">
           {token === "" ? (
-            <Grid item xs={6} mx={1} className="caixa1">
+            <Grid item xs={6} mx={1} className="caixa1 noBarra ">
               <Link to="/home" className="text-decorator-none">
                 <Box marginX={3} className="texto2">
                   <Typography variant="h6" className="cursor">
@@ -91,7 +91,7 @@ function Navbar() {
               <Link to="/login" className="text-decorator-none">
                 <Box marginX={3} marginTop={1}>
                   <Typography variant="h6" className="cursor">
-                  <LoginIcon/>
+                    <LoginIcon />
                   </Typography>
                 </Box>
               </Link>
@@ -112,7 +112,7 @@ function Navbar() {
               </Link>
               <Box marginX={3} marginTop={1}>
                 <Typography variant="h6" className="cursor" onClick={goLogout}>
-                <LogoutIcon/>
+                  <LogoutIcon />
                 </Typography>
               </Box>
             </Grid>
