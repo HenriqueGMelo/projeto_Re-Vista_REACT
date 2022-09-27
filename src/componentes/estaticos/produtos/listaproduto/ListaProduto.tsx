@@ -43,7 +43,7 @@ function ListaProduto() {
     if (produtos.length < 1) {
         return (
             <>
-                <Typography variant='h1'>Nenhuma doação disponível </Typography>
+                <Typography variant='h3'>Nenhuma doação disponível </Typography>
             </>
         )
     }
