@@ -1,72 +1,14 @@
-
-.slider {
-    overflow: hidden;
-    margin: 0px;
-
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider label {
-    position: relative;
-    top: -50px;
-    z-index: 1;
-}
-
-.slider img {
-    width: 100vw;
-    height: 70vh;
-    animation: fade-in normal 1s linear;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: .5;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.slider1, .slider2 {
-    overflow: hidden;
-    margin: 0px;
-
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider1 label, .slider2 label {
-    position: relative;
-    top: -50px;
-    z-index: 1;
-}
-
-.slider1 img, .slider2 img {
-    width: 100vw;
-    height: 90vh;
-    animation: fade-in normal 1s linear;
-}
-
-
-/* Fim carrossel */
+.home{max-width: 40%;}
 
 .h1 {
     color: #36607a;
-    background-color: rgba(255, 255, 255, 0.697);
-    opacity: 75%;
+    background-color: rgb(255, 255, 255);
     padding: 5vh;
     text-align: center;
 }
 
 .fazemos {
-    background-color: rgba(255, 255, 255, 0.697);
-    opacity: 80%;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column ;
 }
@@ -126,11 +68,11 @@
 }
 
 .bt-doador:hover {
-    background-color: rgb(0, 0, 0) !important;
+    background-color:#3a6a8a !important;
 }
 
 .bt-ong:hover {
-    background-color: rgb(0, 0, 0) !important;
+    background-color: #c55849 !important;
 }
 
 /* Carrosseis inferiores */
