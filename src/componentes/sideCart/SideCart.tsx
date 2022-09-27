@@ -21,7 +21,7 @@ export default function SideCart() {
     function handleProductIncrement(produto: CartItem) {
         const IncrementArguments = {
             idProduto: produto.id,
-            amount: produto.qtdProduto + 1
+            amount: produto.qtdProduto + 10
         }
         updateProductAmount(IncrementArguments)
     }
@@ -40,7 +40,7 @@ export default function SideCart() {
 
     function handleClick() {
         if (token === "") {
-            toast.error('Você precisa estar logado para finalizar a compra!', {
+            toast.warning('Você precisa estar logado para finalizar a compra!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -112,7 +112,7 @@ export default function SideCart() {
                             className='btnDelete'
                             onClick={() => handleRemoveProduct(produto.id)}
                             startIcon={<DeleteIcon />}>
-                            Delete
+                            Remover
                         </Button>
                         <hr />
                     </div>
@@ -120,7 +120,8 @@ export default function SideCart() {
                 ))}
                 <Divider />
             </div>
-             <div className='btFinish1'><button className='btn2' type='submit' value='submit' onClick={handleClick}>
+             <div className='btFinish1'>
+                <button className='btn2' type='submit' value='submit' onClick={handleClick}>
                 Finalizar Pedido
             </button>
             </div>

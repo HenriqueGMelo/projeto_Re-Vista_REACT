@@ -1,3 +1,4 @@
+
 .imgCart{
     width: 25%;
     height: 25%;
@@ -10,7 +11,7 @@
 }
 
 .MuiDrawer-paper{
-    width: 24% ;
+    width: 30% ;
 }
 
 .botoes-carrinho{
@@ -24,14 +25,16 @@
     text-align: center;
     font-size: 16px;
     border-radius: 8px;
-    color:var(--black);
+    color:rgb(255, 255, 255);
     cursor: pointer;
-    border: 2px solid var(--black);
+    border: 1px solid;
+    border-color: #8b8989;
+    background-color: #00607b;
 }
 
 .btn2:hover{
-    background: #ff604d;
-    color:  #FFFFFF;
+    background:#003f51;
+    color: #fff;
   }
 
   .btFinish1{
@@ -42,15 +45,23 @@
   }
 
 .btnDelete{
-    background-color: #FF0000 !important;
+    background-color: #DF604F !important;
     padding: 0 20px !important;
     font-size: 12px !important;
     margin-bottom: 10px !important;
 } 
+.btnDelete:hover {
+    background-color: #ff1e00 !important;
+    padding: 0 20px !important;
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+    scale: 10px;
+}
 
 .modalCart{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 100px;
 }
+
