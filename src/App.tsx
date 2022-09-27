@@ -17,7 +17,12 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css"
 import { CartProvider } from './hooks/useCart';
 import MinhaConta from './paginas/minhapagina/minhaConta';
+<<<<<<< HEAD
 
+=======
+import VitrineProduto from './componentes/estaticos/produtos/pedidoproduto/VitrineProduto';
+import ListaProdutosONG from './componentes/estaticos/produtos/listaproduto/ListaProdutoONG';
+>>>>>>> b1be7530eb3f5bc312311acfb8f73e4b41bd3d38
 
 function App() {
 
@@ -34,14 +39,22 @@ function App() {
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/home" element={<Home />} />
               <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+<<<<<<< HEAD
               <Route path="/produtos" element={<ListaProduto />} />
+=======
+              <Route path="/produtos" element={<ListaProduto />} />   
+>>>>>>> b1be7530eb3f5bc312311acfb8f73e4b41bd3d38
               <Route path="/produtos/id/empresas/:id" element={<ListaProdutosDoador />} />
               <Route path="/cadastrodoacao" element={<CadastroDoacao />} />
               <Route path="/dashboard" element={<DashboardDoador />} />
               <Route path='/cart' element={<ShoppingCart />} />
               <Route path='/produtos-ong' element={<ListaProdutosONG />} />
               <Route path="/minhaconta" element={<MinhaConta />} />
+<<<<<<< HEAD
 
+=======
+              <Route path="/vitrine/:id" element={<VitrineProduto />} />
+>>>>>>> b1be7530eb3f5bc312311acfb8f73e4b41bd3d38
             </Routes>
           </div>
         </CartProvider>
