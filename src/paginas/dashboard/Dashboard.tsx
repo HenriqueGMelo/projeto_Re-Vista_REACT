@@ -96,7 +96,7 @@ function DashboardDoador() {
                                 <div className='container-uni'>
                                     <img className='img-doador' src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-solidariedade_114360-6226.jpg?w=740&t=st=1663858111~exp=1663858711~hmac=4209ed572d6f2fd21fbff4fceda3bc13d824d0f699b88fc46724c55eedd3b9e3" alt=""/>
                                 
-                                    <a href='/cadastrodoacao' className='link-uni'>
+                                    <a href='/produtos' className='link-uni'>
                                         <button className='button-ong'>
                                             Veja as doações que estão disponíveis
                                         </button>  
