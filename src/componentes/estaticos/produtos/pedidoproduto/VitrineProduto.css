@@ -180,3 +180,64 @@ h2, h3, p {
     margin-top: 7px !important;
 }
 
+.corSIM{
+    color: #FFFFFF;
+    opacity: 0%;
+}
+
+.vitrine1{
+    display: flex;
+     justify-content: center;
+     
+}
+
+.vitrine2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    max-height:100%;
+    background-color: #ffffff9c;
+}
+
+.NomeTop{
+    display: flex;
+    justify-content: center;
+    color:#36607a;
+    font-size: 30px;
+     
+}
+
+.qtd{
+    color:#ff604d;
+}
+
+.p1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    margin: 10vh;
+   
+    
+}
+
+.tamanhoRoupa{
+    width: 40vw;
+}
+
+.btn-produtos1 {
+    background-color: #36607a!important;
+    color: white !important;
+    font-weight: bold !important;
+    margin-top: 25px !important;
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-produtos1:hover{
+    background-color:#ff604d !important;
+    color: #ffffff !important;
+ 
+}
