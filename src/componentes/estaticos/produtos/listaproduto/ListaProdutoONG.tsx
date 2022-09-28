@@ -12,8 +12,9 @@ function ListaProdutosONG() {
     const [token, setToken] = useLocalStorage('token')
     const [dataUser] = useLocalStorage('user')
     const userLogado = JSON.parse(dataUser);
-    const [user, setUser] = useState<User[]>([])
+    
     const [acoes, setAcoes] = useState<Acao[]>([])
+    const params = new URLSearchParams();
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -24,10 +25,9 @@ function ListaProdutosONG() {
     }, [token])
 
     async function getAcao() {
+        params.append('idUsuario', userLogado.id)
         await acaoserv("/api/Acao", setAcoes, {
-            headers: {
-                'Authorization': token
-            }
+            params: params
         })
     }
     useEffect(() => {
@@ -48,20 +48,20 @@ function ListaProdutosONG() {
                     <article>
                         <Link to={`/produtos/${acao.produto}`} className='decorator' >
                             <figure>
-                                <img src={acao.urL_Imagem} alt="Imagem do produto" />
+                                <img src={acao.produto.urL_Imagem} alt="Imagem do produto" />
                             </figure>
                             <div>
                                 <header>
 
-                                    <h2>{acao.titulo}</h2>
+                                    <h2>{acao.produto.titulo}</h2>
 
                                 </header>
                                 <footer>
                                     <p>
-                                        {acao.descricao}
+                                        {acao.produto.descricao}
                                     </p>
                                     <h3>
-                                        Qtd: {acao}
+                                        Qtd: {acao.qtdAcao}
                                     </h3>
                                 </footer>
                             </div>

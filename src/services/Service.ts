@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://localhost:5000'
+    baseURL: 'http://localhost:5000'
 })
 
 export const login = async (url: any, dados: any, setToken: any, setDataUser: any) => {
@@ -43,6 +43,11 @@ export const buscaId = async(url: any, setDado: any, header: any) => {
 export const post = async(url: any, dados: any, setDado: any, header: any) => { 
     const resposta = await api.post(url, dados, header)
     setDado(resposta.data)
+}
+
+export const postAcao = async(url: any, dados: any, header: any) => { 
+    const resposta = await api.post(url, dados, header)
+
 }
 
 export const put = async(url: any, dados: any, setDado: any, header: any) => { 

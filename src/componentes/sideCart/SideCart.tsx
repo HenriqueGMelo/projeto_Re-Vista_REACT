@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Drawer, Button, Divider } from '@material-ui/core';
 import { CartItem, useCart } from '../../hooks/useCart';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
@@ -9,13 +9,29 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import sacola from './sacola.png'
+import { postAcao } from '../../services/Service';
 
 type Anchor = 'right';
+
+interface PostAcaoDTO {
+    qtdAcao: number,
+    ong: {
+        id:number
+    },
+    produto: {
+        id:number
+    }
+}
 
 export default function SideCart() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const [dtoAcao, setDtoAcao] = useState<PostAcaoDTO>();
+    const [token] = useLocalStorage('token');
+    const [cartLocal] = useLocalStorage('@revista:cart');
+    const [userLocal] = useLocalStorage('user');
+    const localUser = JSON.parse(userLocal);
+    const localCart = JSON.parse(cartLocal);
     const { cart, updateProductAmount, removeProduct } = useCart();
 
     function handleProductIncrement(produto: CartItem) {
@@ -38,7 +54,7 @@ export default function SideCart() {
         removeProduct(idProduto)
     }
 
-    function handleClick() {
+    async function handleClick() {
         if (token === "") {
             toast.warning('Você precisa estar logado para finalizar a compra!', {
                 position: "top-right",
@@ -55,8 +71,24 @@ export default function SideCart() {
         }
         else {
 
+            for (let i = 0; i < localCart.length; i++) {
+                setDtoAcao({
+                    qtdAcao: localCart[i].qtdProduto,
+                    ong : { 
+                        id: localUser.id
+                    },
+                    produto: {
+                        id: localCart[i].id
+                    }
+                })                
+                await postAcao('/api/Acao', dtoAcao, {
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+              }
             toast.success('Pedido Realizado com Sucesso!!', {
-                theme: "colored"
+                theme: "colored"          
             })
         }
     }

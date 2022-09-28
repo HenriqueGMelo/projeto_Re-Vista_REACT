@@ -9,7 +9,7 @@ import './VitrineProduto.css';
 
 function VitrineProduto() {
     const { id } = useParams<{ id: string }>();
-    const [produtos, setProdutos] = useState<Produto[]>([])
+    const [produto, setProduto] = useState<Produto>()
     const [token] = useLocalStorage('token')
     let navigate = useNavigate();
 
@@ -18,35 +18,18 @@ function VitrineProduto() {
             alert("Conecte-se novamente para verificar doações disponíveis")
             navigate("/login")
         }
+        getProduto()
     }, [token])
 
     async function getProduto() {
-        await listar(`/api/Produtos/id/${id}`, setProdutos, {
+        await buscaId(`/api/Produtos/id/${id}`, setProduto, {
             headers: {
                 'Authorization': token
             }
         })
     }
-
-    useEffect(() => {
-        if (id !== undefined) {
-            findById(id)
-        }
-    }, [id])
-
-    async function findById(id: string) {
-        buscaId(`api/Produtos/id/${id}`, setProdutos, {
-            headers: {
-                'Authorization': token
-            }
-        })
-    }
-
-    useEffect(() => {
-        getProduto()
-    }, [produtos.length])
-
-    if (produtos.length < 1) {
+    
+    if (produto == null) {
         return (
             <>
                 <Typography variant='h3'>Nenhum produto disponível </Typography>
@@ -55,8 +38,8 @@ function VitrineProduto() {
     }
     return (
         <section id='lista_produtos' className='display'>
-            {
-                produtos.map(produto => (
+            
+                
                     <div>
                         <div>
                             <figure>
@@ -82,8 +65,8 @@ function VitrineProduto() {
                             </footer>
                         </div>
                     </div>
-                ))
-            }
+                
+            
         </section>
     )
 }

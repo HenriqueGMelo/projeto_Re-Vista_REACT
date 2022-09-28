@@ -59,7 +59,7 @@ function ListaProdutosDoador() {
                                         {produto.descricao}
                                     </p>
                                     <div>
-                                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                                        <Link to={`/vitrine/${produto.id}`} className='decorator' >
                                             <button>Visualizar produto na vitrine</button>
                                         </Link>
                                         <h3>
