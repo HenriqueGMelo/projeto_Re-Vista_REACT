@@ -173,42 +173,6 @@ function MinhaConta() {
     <>
       {/* Container da pagina inteira */}
       <div id="perfil-container">
-
-        {/* Container da esquerda */}
-        <div id="perfil-container-left">
-
-          {/* Container da foto e nome*/}
-          <div id="perfil-container-left-top">
-            <Avatar
-              id="perfil-avatar"
-              alt="Imagem Usuario"
-              src={""}
-              variant="circular"
-            />
-            <h1>{user.nome}</h1>
-          </div>
-
-          {/* Container do historico de doacoes
-          <section id="section-doacoes">
-            <label id="label-checkbox" htmlFor="checkbox">
-              <h4>Minhas Solicitações</h4>
-              <i className="fa-solid fa-chevron-right"></i>
-            </label>
-            <input type="checkbox" name="checkbox" id="checkbox" />
-            
-            <div id="perfil-container-left-bottom">
-              <div>
-
-                <div id="cardsd">
-                  <HistoricoDoacao />
-                </div>
-
-              </div>
-            </div>
-          </section> */}
-
-        </div>
-
         {/* Container da direita */}
         <div id="perfil-container-right">
           <div id="perfil-container-right-top">
@@ -289,57 +253,7 @@ function MinhaConta() {
               </Box>
             </form>
           </div>
-          <div id="perfil-container-right-bottom">
-            <h1 className="h1-senha">Alterar senha</h1>
-            <form onSubmit={onSubmitSenha}>
-
-              <div className="input-group-perfil">
-                <label> Senha Atual </label>
-                <input
-                  type="password"
-                  id="senhaAntiga"
-                  placeholder="Digite sua senha atual"
-                  name="senhaAntiga"
-                  value={confirmarSenha.senhaAntiga}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
-                />
-                <div id="txtSenha"></div>
-              </div>
-
-              <div className="input-group-perfil">
-                <label>Senha</label>
-                <input
-                  type="password"
-                  id="senhaNova"
-                  name="senhaNova"
-                  placeholder="Digite sua nova senha"
-                  value={confirmarSenha.senhaNova}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
-                />
-                <div id="txtNovaSenha"></div>
-              </div>
-
-              <div className="input-group-perfil">
-                <label> Confirmar senha</label>
-                <input
-                  type="password"
-                  id="confirmarSenhaNova"
-                  name="confirmarSenhaNova"
-                  placeholder="Confirme sua nova senha"
-                  value={confirmarSenha.confirmarSenhaNova}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModelSenha(e)}
-                />
-                <div id="txtConfirmaSenha"></div>
-              </div>
-
-              <Box id="box-botao-atualizar-senha">
-                <Button id="botao-atualizar-senha" type="submit">
-                  <p>Atualizar senha</p>
-                </Button>
-              </Box>
-            </form>
-
-          </div>
+          
         </div>
       </div>
     </>

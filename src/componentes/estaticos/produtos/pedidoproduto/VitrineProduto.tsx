@@ -6,6 +6,9 @@ import useLocalStorage from 'react-use-localstorage';
 import { buscaId, listar } from '../../../../services/Service';
 import User from '../../../../models/User';
 import './VitrineProduto.css';
+import {Button} from '@material-ui/core';
+import {useCart} from "../../../../hooks/useCart";
+
 
 function VitrineProduto() {
     const { id } = useParams<{ id: string }>();
@@ -28,47 +31,55 @@ function VitrineProduto() {
             }
         })
     }
+
+    const { addProduct } = useCart();
+
+    function handleAddCart(produtoId: number) {
+      addProduct(produtoId);
+    }
     
     if (produto == null) {
         return (
             <>
-                <Typography variant='h3'>Nenhum produto disponível </Typography>
+                <Typography variant='h3' className="corSIM">Nenhum produto disponível</Typography>
             </>
         )
     }
     return (
-        <section id='lista_produtos' className='display'>
-            
-                
-                    <div>
-                        <div>
-                            <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
-                            </figure>
-                        </div>
-                        <div>
-                            <header>
-
-                                <h2>{produto.titulo}</h2>
-
-                            </header>
-                            <footer>
-                                <p>
-                                    {produto.descricao}
-                                </p>
-                                <div>
-
-                                    <h3>
-                                        Qtd: {produto.qtdLimite}
-                                    </h3>
-                                </div>
-                            </footer>
-                        </div>
-                    </div>
-                
-            
-        </section>
-    )
+      <section id="lista_produtos" className="display">
+        <div className="vitrine1">
+          <div>
+            <figure>
+              <img
+                className="tamanhoRoupa"
+                src={produto.urL_Imagem}
+                alt="Imagem do produto"
+              />
+            </figure>
+          </div>
+          <div className="vitrine2">
+            <header className="NomeTop">
+              <h2>{produto.titulo}</h2>
+            </header>
+            <div className="vitrine2">
+              <p className="p1">{produto.descricao}</p>
+              <div>
+                <h3>
+                  Quantidade <h2 className="qtd">{produto.qtdLimite}</h2>
+                </h3>
+                <Button
+                  variant="contained"
+                  className="btn-produtos1"
+                  onClick={() => handleAddCart(produto.id)}
+                >
+                  Adicionar ao carrinho
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
 }
 
 export default VitrineProduto;
