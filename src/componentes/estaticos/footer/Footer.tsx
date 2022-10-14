@@ -14,7 +14,7 @@ function Footer (){
           direction="row"
           justifyContent="center"
           alignItems="center"
-          className="box1"
+          className="box1 noBarra2"
         >
           <Grid alignItems="center" item xs={12}>
             <Box>

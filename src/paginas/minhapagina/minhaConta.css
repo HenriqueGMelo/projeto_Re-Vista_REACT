@@ -72,11 +72,19 @@
 }
 
 #perfil-container-right-top form {
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 80%;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     margin-top: 10px;
 }
 
 #box-botao-atualizar-dados {
+<<<<<<< HEAD
+=======
+    align-items: center;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     justify-content: center;
     width: 100%;
     display: flex;
@@ -85,10 +93,17 @@
 
 #botao-atualizar-dados {
     width: 40%;
+<<<<<<< HEAD
     min-width: 120px;
     margin-top: 30px;
     height: 45px;
     background-color: #df604f;
+=======
+    min-width: 130px;
+    margin-top: 30px;
+    height: 45px;
+    background-color: #05C19C;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     border-radius: 20px;
     border: none;
     justify-content: center;
@@ -96,9 +111,19 @@
 }
 
 #botao-atualizar-dados p {
+<<<<<<< HEAD
     font-size: 25px;
     color: white;
     padding-top: 5px;
+=======
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 50px;
+    color: white;
+    padding-top: 20px;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     display: block;
 }
 
@@ -163,21 +188,36 @@ form .input-group-perfil label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+<<<<<<< HEAD
     justify-content: center;
 }
 
 form .input-group-perfil input {
     width: 95%;
+=======
+}
+
+form .input-group-perfil input {
+    width: 100%;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     height: 47px;
     background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
     outline: none;
+<<<<<<< HEAD
     border: 2px solid #36607a;
     padding: 15px;
     font-size: 17px;
     color: #36607a;
     transition: all 0.4s ease;
     justify-content: center;
+=======
+    border: 2px solid #69dac33a;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+    transition: all 0.4s ease;
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
 }
 
 form .input-group-perfil input:focus {

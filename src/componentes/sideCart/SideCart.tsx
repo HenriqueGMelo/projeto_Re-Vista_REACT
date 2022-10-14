@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from 'react';
-import { Drawer, Button, Divider, Badge, IconButton, Typography } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Drawer, Button, Divider } from '@material-ui/core';
 import { CartItem, useCart } from '../../hooks/useCart';
 import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -8,15 +8,35 @@ import "./SideCart.css";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import sacola from './sacola.png'
+=======
+import sacola from './sacola.png'
+import { postAcao } from '../../services/Service';
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
 
 type Anchor = 'right';
+
+interface PostAcaoDTO {
+    qtdAcao: number,
+    ong: {
+        id:number
+    },
+    produto: {
+        id:number
+    }
+}
 
 export default function SideCart() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const [dtoAcao, setDtoAcao] = useState<PostAcaoDTO>();
+    const [token] = useLocalStorage('token');
+    const [cartLocal] = useLocalStorage('@revista:cart');
+    const [userLocal] = useLocalStorage('user');
+    const localUser = JSON.parse(userLocal);
+    const localCart = JSON.parse(cartLocal);
     const { cart, updateProductAmount, removeProduct } = useCart();
 
     function handleProductIncrement(produto: CartItem) {
@@ -39,9 +59,13 @@ export default function SideCart() {
         removeProduct(idProduto)
     }
 
-    function handleClick() {
+    async function handleClick() {
         if (token === "") {
+<<<<<<< HEAD
             toast.error('Você precisa estar logado para finalizar o pedido!', {
+=======
+            toast.warning('Você precisa estar logado para finalizar a compra!', {
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -54,8 +78,30 @@ export default function SideCart() {
             navigate("/login")
         }
         else {
+<<<<<<< HEAD
             toast.success('Pedido Realizado com Sucesso!!', {
                 theme: "colored"
+=======
+
+            for (let i = 0; i < localCart.length; i++) {
+                setDtoAcao({
+                    qtdAcao: localCart[i].qtdProduto,
+                    ong : { 
+                        id: localUser.id
+                    },
+                    produto: {
+                        id: localCart[i].id
+                    }
+                })                
+                await postAcao('/api/Acao', dtoAcao, {
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    }
+                })
+              }
+            toast.success('Pedido Realizado com Sucesso!!', {
+                theme: "colored"          
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
             })
         }
     }
@@ -109,7 +155,7 @@ export default function SideCart() {
                             className='btnDelete'
                             onClick={() => handleRemoveProduct(produto.id)}
                             startIcon={<DeleteIcon />}>
-                            Delete
+                            Remover
                         </Button>
                         <hr />
                     </div>
@@ -117,6 +163,7 @@ export default function SideCart() {
                 ))}
                 <Divider />
             </div>
+<<<<<<< HEAD
 
             <div className='btFinish1'>
                 <Link to="/produtos-ong" className="text-decoration">
@@ -124,6 +171,12 @@ export default function SideCart() {
                         Finalizar Pedido
                     </button>
                 </Link>
+=======
+             <div className='btFinish1'>
+                <button className='btn2' type='submit' value='submit' onClick={handleClick}>
+                Finalizar Pedido
+            </button>
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
             </div>
 
             <div className='modalCart'>
@@ -133,6 +186,7 @@ export default function SideCart() {
     );
 
     return (
+<<<<<<< HEAD
         /* BOTÃO DO CARRINHO */
         /* BOTÃO DO CARRINHO */
         <div>
@@ -147,5 +201,25 @@ export default function SideCart() {
                 </React.Fragment>
             ))}
         </div>
+=======
+      /* BOTÃO DO CARRINHO */
+      /* BOTÃO DO CARRINHO */
+      <div>
+        {(["right"] as Anchor[]).map((anchor) => (
+          <React.Fragment key={anchor}>
+            <Button onClick={toggleDrawer(anchor, true)}>
+              <img src={sacola} alt="oi" />
+            </Button>
+            <Drawer
+              anchor={anchor}
+              open={state[anchor]}
+              onClose={toggleDrawer(anchor, false)}
+            >
+              {list(anchor)}
+            </Drawer>
+          </React.Fragment>
+        ))}
+      </div>
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
     );
 }

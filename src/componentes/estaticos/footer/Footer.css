@@ -12,3 +12,7 @@
     font-weight: bold;
     
 }
+
+.noBarra2 {
+    max-width: 100vw !important;
+}

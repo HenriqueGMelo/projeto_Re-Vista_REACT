@@ -40,7 +40,6 @@ function App() {
               <Route path='/cart' element={<ShoppingCart />} />
               <Route path='/produtos-ong' element={<ListaProdutosONG />} />
               <Route path="/minhaconta" element={<MinhaConta />} />
-
             </Routes>
           </div>
           </CartProvider>

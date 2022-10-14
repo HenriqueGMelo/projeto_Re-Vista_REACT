@@ -53,6 +53,7 @@ function ListaProdutosDoador() {
 
                                 <h2>{produto.titulo}</h2>
 
+<<<<<<< HEAD
                             </header>
                             <footer>
                                 <p>
@@ -70,6 +71,24 @@ function ListaProdutosDoador() {
                                 </div>
                             </footer>
                         </div>
+=======
+                                </header>
+                                <footer>
+                                    <p>
+                                        {produto.descricao}
+                                    </p>
+                                    <div>
+                                        <Link to={`/vitrine/${produto.id}`} className='decorator' >
+                                            <button>Visualizar produto na vitrine</button>
+                                        </Link>
+                                        <h3>
+                                            Qtd: {produto.qtdLimite}
+                                        </h3>
+
+                                    </div>
+                                </footer>
+                            </div>
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
                     </article>
                 ))
             }

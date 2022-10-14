@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { Typography, Grid, Button, Card } from '@material-ui/core';
-import { Box } from '@mui/material';
 import User from '../../models/User';
 import './Dashboard.css';
 import { toast } from 'react-toastify';
@@ -87,7 +85,7 @@ function DashboardDoador() {
                                 <div className='container-uni'>
                                     <img className='img-doador' src="https://img.freepik.com/vetores-gratis/conceito-de-doacao-de-roupas-desenhadas-a-mao_52683-54709.jpg?size=626&ext=jpg&ga=GA1.2.872356562.1661582973" alt=""/>
                                 
-                                    <a href={`/produtos/id/empresas/${userLogado.id}`} className='link-uni'>
+                                    <a href={`/produtos-ong`} className='link-uni'>
                                         <button className='button-ong'>
                                             Veja suas doações recebidas
                                         </button>  

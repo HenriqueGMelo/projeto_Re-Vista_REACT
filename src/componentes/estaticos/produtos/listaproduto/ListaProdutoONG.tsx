@@ -37,7 +37,11 @@ function ListaProdutosONG() {
     if (acoes.length < 1) {
         return (
             <>
+<<<<<<< HEAD
                 <h4>Nenhuma doação recebida ou Pedido em análise</h4>
+=======
+                <h1>Nenhuma doação recebida </h1>
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
             </>
         )
     }
@@ -72,4 +76,8 @@ function ListaProdutosONG() {
         </section>
     )
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f049282d10e74e79790e593651495cac543b388f
 export default ListaProdutosONG;
