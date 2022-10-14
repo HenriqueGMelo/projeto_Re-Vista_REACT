@@ -6,13 +6,10 @@ import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
 import User from '../../../../models/User';
-<<<<<<< HEAD
 import { useCart } from '../../../../hooks/useCart';
 import { Box } from '@mui/material';
-=======
-import { Box } from '@mui/material';
-import { useCart } from '../../../../hooks/useCart';
->>>>>>> f049282d10e74e79790e593651495cac543b388f
+
+
 
 function ListaProduto() {
     const [produtos, setProdutos] = useState<Produto[]>([])
@@ -54,50 +51,6 @@ function ListaProduto() {
     }
     return (
         <>
-<<<<<<< HEAD
-        <Grid xs={12} >
-            <Box className="top">
-                <h2>Produtos</h2>
-            </Box>
-        </Grid>
-        
-        <section id='lista_produtos' className='alinhamento'>
-            {
-                 produtos.map(produto => (
-                    <article className="section2 cardprodutos card-content">
-                       
-                            <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" className="imagemProdutos" />
-                            </figure>
-                            <div>
-                                <header>
-
-                                    <h2 className='nomeProdutos'>{produto.titulo}</h2>
-
-                                </header>
-                                <footer>
-
-                                    <p  className='fonteProdutos'>
-                                        {produto.descricao}
-                                    </p>
-                                    
-                                    <h3 className='qtdProdutos'>
-                                        Qtd: {produto.qtdLimite}
-                                    </h3>
-                                    <Box display="flex" justifyContent="center" mb={1.5}>  
-                                        <Box mx={1}>
-                                            <Button variant='contained' className="btn-produtos" onClick={() => handleAddCart(produto.id)} >
-                                                Adicionar ao carrinho
-                                            </Button>
-                                        </Box>
-                                </Box>
-                                </footer>
-                            </div>
-                    </article>
-                ))
-            }
-        </section>
-=======
             <Grid xs={12} >
                 <Box className="top">
                     <h2>Produtos</h2>
@@ -140,7 +93,6 @@ function ListaProduto() {
                     ))
                 }
             </section>
->>>>>>> f049282d10e74e79790e593651495cac543b388f
         </>
     )
 }

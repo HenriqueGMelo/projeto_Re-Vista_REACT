@@ -10,16 +10,10 @@ import { buscaId, put } from "../../services/Service";
 import { toast } from "react-toastify";
 import { Search } from "@material-ui/icons";
 import { TabContext, TabPanel } from '@material-ui/lab';
-<<<<<<< HEAD
 import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
 import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
 import AutenticarUsuarioSenhaDTO from "../../models/AutenticarUsuarioSenhaDTO";
-=======
-import AutenticarUsuarioSenhaDTO from "../../models/AutenticarUsuarioSenhaDTO";
-// import HistoricoDoacao from "../../components/doacoes/historicoDoacao/HistoricoDoacao";
-import AtualizarUsuarioDTO from "../../models/AtualizarUsuarioDTO";
-import AtualizarSenhaUsuarioDTO from "../../models/AtualizarSenhaUsuarioDTO";
->>>>>>> f049282d10e74e79790e593651495cac543b388f
+
 
 function MinhaConta() {
 
@@ -202,17 +196,12 @@ function MinhaConta() {
                   type="email"
                   id="email"
                   name="email"
-<<<<<<< HEAD
                   placeholder="Digite o seu E-mail"
-=======
->>>>>>> f049282d10e74e79790e593651495cac543b388f
                   value={user.email}
                   onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                 />
                 <div id="txtEmail"></div>
               </div>
-
-
 
               <div className="input-group-perfil">
                 <label htmlFor="nome"> Nome do Usuario </label>

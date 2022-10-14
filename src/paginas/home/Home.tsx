@@ -7,18 +7,9 @@ import ruiva from '../../assets/ruiva.png'
 import Carousel from '../Carousels/carousel/Carousel';
 import Carousel1 from "../Carousels/carousel1/Carousel1";
 import Carousel2 from "../Carousels/carousel2/Carousel2";
-<<<<<<< HEAD
 import coracao from '../../assets/home.png';
 import aperto from '../../assets/aperto.png';
 import doar from '../../assets/doar.png'
-=======
-
-//imagens
-import coracao from "../../assets/home.png";
-import aperto from "../../assets/aperto.png"
-import doar from "../../assets/doar.png"
-
->>>>>>> f049282d10e74e79790e593651495cac543b388f
 
 function Home() {
 
