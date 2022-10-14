@@ -6,7 +6,8 @@ import Produto from '../../../../models/Produto';
 import useLocalStorage from 'react-use-localstorage';
 import { listar } from '../../../../services/Service';
 import User from '../../../../models/User';
-
+import { useCart } from '../../../../hooks/useCart';
+import { Box } from '@mui/material';
 
 function ListaProduto() {
     const [produtos, setProdutos] = useState<Produto[]>([])
@@ -28,6 +29,13 @@ function ListaProduto() {
             }
         })
     }
+
+    const { addProduct } = useCart();
+
+    function handleAddCart(produtoId: number) {
+        addProduct(produtoId)
+    }
+
     useEffect(() => {
         getProduto()
     }, [produtos.length])
@@ -35,43 +43,55 @@ function ListaProduto() {
     if (produtos.length < 1) {
         return (
             <>
-                <Typography variant='h1'>Nenhuma doação disponível </Typography>
+                <Typography variant='h3'>Nenhuma doação disponível </Typography>
             </>
         )
     }
     return (
-        <section id='lista_produtos'>
+        <>
+        <Grid xs={12} >
+            <Box className="top">
+                <h2>Produtos</h2>
+            </Box>
+        </Grid>
+        
+        <section id='lista_produtos' className='alinhamento'>
             {
-                produtos.map(produto => (
-                    <article>
-                        <Link to={`/produtos/${produto.id}`} className='decorator' >
+                 produtos.map(produto => (
+                    <article className="section2 cardprodutos card-content">
+                       
                             <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                                <img src={produto.urL_Imagem} alt="Imagem do produto" className="imagemProdutos" />
                             </figure>
                             <div>
                                 <header>
 
-                                    <h2>{produto.titulo}</h2>
+                                    <h2 className='nomeProdutos'>{produto.titulo}</h2>
 
                                 </header>
                                 <footer>
-                                    <p>
+
+                                    <p  className='fonteProdutos'>
                                         {produto.descricao}
                                     </p>
-                                    <h3>
+                                    
+                                    <h3 className='qtdProdutos'>
                                         Qtd: {produto.qtdLimite}
                                     </h3>
+                                    <Box display="flex" justifyContent="center" mb={1.5}>  
+                                        <Box mx={1}>
+                                            <Button variant='contained' className="btn-produtos" onClick={() => handleAddCart(produto.id)} >
+                                                Adicionar ao carrinho
+                                            </Button>
+                                        </Box>
+                                </Box>
                                 </footer>
                             </div>
-                        </Link>
                     </article>
                 ))
             }
         </section>
+        </>
     )
-
-
-
 }
-
 export default ListaProduto;

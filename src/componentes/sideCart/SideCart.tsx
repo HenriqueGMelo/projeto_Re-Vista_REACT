@@ -8,6 +8,8 @@ import "./SideCart.css";
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
+import { Link } from 'react-router-dom';
+import sacola from './sacola.png'
 
 type Anchor = 'right';
 
@@ -20,7 +22,7 @@ export default function SideCart() {
     function handleProductIncrement(produto: CartItem) {
         const IncrementArguments = {
             idProduto: produto.id,
-            amount: produto.qtdProduto + 1
+            amount: produto.qtdProduto + 10
         }
         updateProductAmount(IncrementArguments)
     }
@@ -39,7 +41,7 @@ export default function SideCart() {
 
     function handleClick() {
         if (token === "") {
-            toast.error('Você precisa estar logado para finalizar a compra!', {
+            toast.error('Você precisa estar logado para finalizar o pedido!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -50,16 +52,13 @@ export default function SideCart() {
                 progress: undefined
             });
             navigate("/login")
-
         }
         else {
-
-            toast.success('Compra Realizada com Sucesso!!', {
+            toast.success('Pedido Realizado com Sucesso!!', {
                 theme: "colored"
             })
         }
     }
-
 
     const [state, setState] = React.useState({
         right: false,
@@ -70,8 +69,6 @@ export default function SideCart() {
     ) => {
         setState({ ...state, [anchor]: open });
     };
-
-    /* Conteudo do carrinho Altera Aqui */
 
     const list = (anchor: Anchor) => (
         <>
@@ -120,11 +117,15 @@ export default function SideCart() {
                 ))}
                 <Divider />
             </div>
-             <div className='btFinish1'><button className='btn2' type='submit' value='submit' onClick={handleClick}>
-                Finalizar Compra
-            </button>
+
+            <div className='btFinish1'>
+                <Link to="/produtos-ong" className="text-decoration">
+                    <button className='btn2' type='submit' value='submit' onClick={handleClick}>
+                        Finalizar Pedido
+                    </button>
+                </Link>
             </div>
-            
+
             <div className='modalCart'>
                 {/* <BasicModal /> */}
             </div>
@@ -138,6 +139,7 @@ export default function SideCart() {
             {(['right'] as Anchor[]).map((anchor) => (
                 <React.Fragment key={anchor}>
                     <Button onClick={toggleDrawer(anchor, true)}>
+                        <img src={sacola} alt="oi" />
                     </Button>
                     <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
                         {list(anchor)}

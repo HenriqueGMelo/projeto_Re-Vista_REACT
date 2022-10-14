@@ -4,10 +4,12 @@ import { Box, Card, CardContent, CardMedia, CardActionArea } from '@mui/material
 //importando gri e paper (background) do material ui
 import './Home.css';
 import ruiva from '../../assets/ruiva.png'
-import Carousel from '../Carousels/carousel/Carousel'
+import Carousel from '../Carousels/carousel/Carousel';
 import Carousel1 from "../Carousels/carousel1/Carousel1";
 import Carousel2 from "../Carousels/carousel2/Carousel2";
-
+import coracao from '../../assets/home.png';
+import aperto from '../../assets/aperto.png';
+import doar from '../../assets/doar.png'
 
 function Home() {
 
@@ -27,50 +29,47 @@ function Home() {
             O que fazemos?
           </Typography>
           <Box className="fazemos">
-            <Box className="fazemosbox">
+            <Box className="fazemosbox ">
               <p>
-                Trabalhamos com uma visão e propósito que visa atendermos e contribuirmos
-                com a ODS da ONU de número 12 - “Consumo e Produção Sustentáveis”. <br></br><br></br>
-                Buscamos implementar está ODS na área têxtil, onde temos como foco
-                o reaproveitamento de roupas em bom estado de maneira que assim possam
-                ser entregues a ONG`s parceiras que por sua vez as entregam para
-                as pessoas que estão necessitando.
+                Trabalhamos com uma visão e propósito que visa atendermos e
+                contribuirmos com a ODS da ONU de número 12 - “Consumo e
+                Produção Sustentáveis”. <br></br>
+                <br></br>
+                Buscamos implementar está ODS na área têxtil, onde temos como
+                foco o reaproveitamento de roupas em bom estado de maneira que
+                assim possam ser entregues a ONG`s parceiras que por sua vez as
+                entregam para as pessoas que estão necessitando.
               </p>
-              <img
-                src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                alt=""
-              />
+              <img src={doar} alt="" className="home" />
             </Box>
             <Box className="fazemosbox">
-              <img
-                src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                alt=""
-              />
+              <img src={aperto} alt="" className="home" />
               <p>
-                Somos um E-Commerce voltado para a área de doações de roupas, onde através
-                de nosso website fazemos a intermediação entre Doadores e ONG´s. <br></br><br></br>
-                Através da [Re]vista tornamos as ações dos usuários “Doador e ONG”
-                fáceis de serem realizadas de maneira segura e prática para ambos. <br></br><br></br>
-                Além da maneira prática para os usuários utilizarem nosso E-Commerce,
-                também contribuímos para diferentes vertentes, não somente a causa de
-                consumo e produção sustentáveis
-
+                Somos um E-Commerce voltado para a área de doações de roupas,
+                onde através de nosso website fazemos a intermediação entre
+                Doadores e ONG´s. <br></br>
+                <br></br>
+                Através da [Re]vista tornamos as ações dos usuários “Doador e
+                ONG” fáceis de serem realizadas de maneira segura e prática para
+                ambos. <br></br>
+                <br></br>
+                Além da maneira prática para os usuários utilizarem nosso
+                E-Commerce, também contribuímos para diferentes vertentes, não
+                somente a causa de consumo e produção sustentáveis
               </p>
             </Box>
             <Box className="fazemosbox">
               <p>
-                Com este projeto conseguimos estimular e propagar o consumo responsável
-                e sustentável de roupas, visando contribuir em diversas vertentes que
-                por fim se unem como um todo, sendo: as pessoas que recebem cada doação,
-                sociedade e meio ambiente. <br></br><br></br>
-                De forma simples todos podem ajudar nesta causa de suma importância,
-                doar gera grande impacto positivo para todos
-
+                Com este projeto conseguimos estimular e propagar o consumo
+                responsável e sustentável de roupas, visando contribuir em
+                diversas vertentes que por fim se unem como um todo, sendo: as
+                pessoas que recebem cada doação, sociedade e meio ambiente.{" "}
+                <br></br>
+                <br></br>
+                De forma simples todos podem ajudar nesta causa de suma
+                importância, doar gera grande impacto positivo para todos
               </p>
-              <img
-                src="https://uniformesnatalrn.com.br/image/catalog/sobre-nos.png"
-                alt=""
-              />
+              <img src={coracao} alt="" className="home" />
             </Box>
           </Box>
         </Grid>
@@ -93,13 +92,12 @@ function Home() {
                   </Typography>
                   <Typography variant="body2">
                     A indústria da moda está entre as mais poluentes do mundo,
-                    depois da indústria do petróleo. De acordo com a
-                    Organização das Nações Unidas (ONU), ela é responsável por
-                    8% dos gases do efeito estufa e por 20% do desperdício de
-                    água no mundo. Com o passar do tempo, as roupas se
-                    desgastam e liberam microplásticos que acabam na
-                    atmosfera, afetando fortemente a fauna marítima ou
-                    terrestre das cercanias.
+                    depois da indústria do petróleo. De acordo com a Organização
+                    das Nações Unidas (ONU), ela é responsável por 8% dos gases
+                    do efeito estufa e por 20% do desperdício de água no mundo.
+                    Com o passar do tempo, as roupas se desgastam e liberam
+                    microplásticos que acabam na atmosfera, afetando fortemente
+                    a fauna marítima ou terrestre das cercanias.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -118,11 +116,11 @@ function Home() {
                   </Typography>
                   <Typography variant="body2">
                     A doação de roupa é uma boa ação que beneficia todo mundo.
-                    Quem doa libera espaço e quem recebe agradece, ainda mais
-                    em tempos de diferenças sociais tão gritantes na nossa
-                    sociedade. Doar promove a sustentabilidade e aumenta o
-                    tempo de uso da roupa, evitando que ela vá para os lixões
-                    e polua o meio ambiente.
+                    Quem doa libera espaço e quem recebe agradece, ainda mais em
+                    tempos de diferenças sociais tão gritantes na nossa
+                    sociedade. Doar promove a sustentabilidade e aumenta o tempo
+                    de uso da roupa, evitando que ela vá para os lixões e polua
+                    o meio ambiente.
                   </Typography>
                 </CardContent>
               </CardActionArea>
@@ -158,13 +156,11 @@ function Home() {
             Como posso participar?
           </Typography>
           <Box className="box-btn">
-            <a href="#car-doador" className='text-decoration-car' >
-
+            <a href="#car-doador" className="text-decoration-car">
               <Button className="bt-doador">Quero ser um doador</Button>
             </a>
-            <a href="#car-ong" className='text-decoration-car'>
+            <a href="#car-ong" className="text-decoration-car">
               <Button className="bt-ong ">Quero receber doações</Button>
-
             </a>
           </Box>
         </Grid>
@@ -174,7 +170,7 @@ function Home() {
           </Typography>
         </Grid>
 
-        <Grid xs={12} id='car-doador' >
+        <Grid xs={12} id="car-doador">
           <Carousel2 />
         </Grid>
 
@@ -184,7 +180,7 @@ function Home() {
           </Typography>
         </Grid>
 
-        <Grid xs={12} id='car-ong' >
+        <Grid xs={12} id="car-ong">
           <Carousel1 />
         </Grid>
       </Grid>

@@ -32,11 +32,11 @@ function ListaProdutosDoador() {
     useEffect(() => {
         getProduto()
     }, [produtos.length])
-    
-    if (produtos.length <1) {
+
+    if (produtos.length < 1) {
         return (
             <>
-            <Typography variant='h1'>Nenhuma doação disponível </Typography>
+                <Typography variant='h4'>Nenhuma doação disponível </Typography>
             </>
         )
     }
@@ -45,30 +45,31 @@ function ListaProdutosDoador() {
             {
                 produtos.map(produto => (
                     <article>
-                            <figure>
-                                <img src={produto.urL_Imagem} alt="Imagem do produto" />
-                            </figure>
-                            <div>
-                                <header>
+                        <figure>
+                            <img src={produto.urL_Imagem} alt="Imagem do produto" />
+                        </figure>
+                        <div>
+                            <header>
 
-                                    <h2>{produto.titulo}</h2>
+                                <h2>{produto.titulo}</h2>
 
-                                </header>
-                                <footer>
-                                    <p>
-                                        {produto.descricao}
-                                    </p>
-                                    <div>
-                                        <Link to={`/produtos/${produto.id}`} className='decorator' >
-                                            <button>Visualizar produto na vitrine</button>
-                                        </Link>
-                                        <h3>
-                                            Qtd: {produto.qtdLimite}
-                                        </h3>
-
-                                    </div>
-                                </footer>
-                            </div>
+                            </header>
+                            <footer>
+                                <p>
+                                    {produto.descricao}
+                                </p>
+                                <div>
+                                    <h3>
+                                        Total: {produto.qtdProduto}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <h3>
+                                        Qtd por ong: {produto.qtdLimite}
+                                    </h3>
+                                </div>
+                            </footer>
+                        </div>
                     </article>
                 ))
             }

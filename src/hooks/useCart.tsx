@@ -1,6 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 import { toast } from 'react-toastify';
-// import Products from '../components/produtos/listaproduto/ListaProduto';
 import Produto from '../models/Produto';
 import { api } from '../services/Service';
 import useLocalStorage from 'react-use-localstorage';
